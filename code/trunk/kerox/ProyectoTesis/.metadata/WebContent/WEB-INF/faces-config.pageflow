@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13708081260090" configfile="/ProyectoTesis/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="tutorLogin.xhtml" id="pf13708398861780" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13708398861791" path="/tutorLogin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="tutorPage.xhtml" id="pf13708398861792" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13708398861791" path="/tutorPage.xhtml"/>
+  <links id="pf13708398861791" target="pf13708398861792" source="pf13708398861780"/>
+</pageflow:Pageflow>
