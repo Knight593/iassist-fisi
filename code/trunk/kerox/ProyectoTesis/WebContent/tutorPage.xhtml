@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Tutor - Panel de Control</title>
+    <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/resources/styles/destilos.css" />
+</h:head>
+<h:body>
+    <p:outputLabel value="Error - Acceso Restringido." rendered="#{!tutorSesionBean.sesionActiva}" styleClass="mensajeErrorLogin"></p:outputLabel>
+    <p:panel id="panelTabPadre" rendered="#{tutorSesionBean.sesionActiva}" styleClass="panelTabPadre">
+	    <p:tabView id="tabsPanel" styleClass="panelTabs">
+	        <p:tab id="tabInformacion" title="Informaci&oacute;n del tutor" titleStyleClass="panelInformacion">
+	            <p:outputLabel id="tituloTabInformacion" value="Información del Tutor" styleClass="tituloPanelInformacion"></p:outputLabel>
+	            <br/><br/>
+	            <h:panelGrid id="panelTabInformacion" border="0" columns="2" styleClass="panelInformacion">
+	               <p:outputLabel value="Nombre:" styleClass="descripcionPanelInformacion"></p:outputLabel>
+	               <p:outputLabel value="#{tutorSesionBean.nombre}" styleClass="valorPanelInformacion"></p:outputLabel>
+	               <p:outputLabel value="E-mail:" styleClass="descripcionPanelInformacion"></p:outputLabel>
+	               <p:outputLabel value="#{tutorSesionBean.mail}" styleClass="valorPanelInformacion"></p:outputLabel>
+	            </h:panelGrid>
+	        </p:tab>
+	        <p:tab id="tabHangout" title="Nuevo HangOut" titleStyleClass="tabTituloHangOut">
+	           <h:form>
+	               <p:outputLabel id="tituloTabInformacion" value="Información del Tutor" styleClass="tituloPanelTabsTutorHome"></p:outputLabel>
+	               <br/><br/>
+	               <h:panelGrid id="panelTabHangout" border="0" columns="2" styleClass="panelTabsTutorHome">
+	                   <p:outputLabel value="Link del Nuevo HangOut:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+	                   <p:inputText value="#{hangOutBean.ruta}" size="100"></p:inputText>
+	                   <p:outputLabel value="T&iacute;tulo del HangOut:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                       <p:inputText value="#{hangOutBean.titulo}" size="40"></p:inputText>
+	                   <p:outputLabel value="Nivel:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                       <p:inputText value="#{hangOutBean.nivel}" size="20"></p:inputText>
+                       <p:outputLabel value="Tecnolog&iacute;as:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                       <p:inputText value="#{hangOutBean.tecnologias}" size="80"></p:inputText>
+                       <p:outputLabel value="Descripci&oacute;n:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                       <p:inputText value="#{hangOutBean.descripcion}" size="100"></p:inputText>
+                       <h:commandButton colspan="2" value="Publicar HangOut" styleClass="botonPublicarHangout" actionListener="#{hangOutBean.actualizarVideo}"></h:commandButton>
+	               </h:panelGrid>
+	           </h:form>
+	        </p:tab>
+	    </p:tabView>
+    </p:panel>
+</h:body>
+</html>

@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Prototipo V1</title>
+	<link rel="stylesheet" type="text/css"
+		href="${facesContext.externalContext.requestContextPath}/resources/styles/destilos.css" />
+	<style type="text/css">
+.ui-widget {
+	font-size: 90% !important;
+}
+
+.ui-layout-north .ui-layout-unit-content {
+	background-image: url('resources/images/banner.png');
+}
+
+.ui-top {
+	background-image: url('resources/images/banner.png');
+}
+</style>
+	<style type="text/css">
+.ui-layout-north {
+	z-index: 20 !important;
+	overflow: visible !important;;
+}
+
+.ui-layout-north .ui-layout-unit-content {
+	overflow: visible !important;
+}
+</style>
+	<style type="text/css">
+.ui-menubar {
+	border-color: transparent;
+	background-image: url('resources/images/banner.png') !important;
+	color: white;
+}
+
+.submenu .ui-menuitem-text {
+	color: black !important;
+}
+
+.barramenu  .ui-menuitem-text {
+	color: white !important;
+}
+
+.ui-menuitem-link:hover {
+	background: rgb(104, 179, 249) !important;
+	color: white;
+}
+</style>
+</h:head>
+<h:body>
+
+	<p:layout fullPage="true" style="color: #FFFFFF;">
+		<p:layoutUnit position="north" size="52" gutter="0"
+			style="background-image: url('resources/images/banner.png');">
+			<p:menubar autoDisplay="false" styleClass="barramenu"
+				style="float:right;">
+				<p:menuitem id="loginBtn" value="Iniciar sesión"
+					styleClass="submenu" url="#" />
+			</p:menubar>
+
+			<p:overlayPanel id="loginPanel" for="loginBtn" hideEffect="fade"
+				dynamic="true">
+				<h:panelGrid columns="2">
+
+					<p:outputLabel value="Usuario:" />
+					<p:inputText />
+					<p:outputLabel value="Contraseña" />
+					<p:inputText />
+					<h:panelGrid columns="2">
+						<p:selectBooleanCheckbox />
+						<h:outputText value="Recordarme" />
+					</h:panelGrid>
+					<p:commandButton value="Iniciar sesión"
+						style="margin-left: auto; margin-right: auto;" />
+					<p:outputLabel value="¿No tienes cuenta?" />
+					<p:commandButton value="Registrarme"
+						style="margin-left: auto; margin-right: auto;" />
+
+				</h:panelGrid>
+			</p:overlayPanel>
+
+		</p:layoutUnit>
+
+		<p:layoutUnit position="center">
+
+			<h:form id="usuarioForm">
+
+
+				<p:accordionPanel id="acordionPanel" activeIndex="0" multiple="true"
+					styleClass="panelAcordionHangout">
+					<p:tab title="SESIÓN EN VIVO" disabled="true">
+						<p:outputLabel id="outTitulo" value="#{hangOutBean.titulo}"
+							styleClass="tituloHangout" />
+						<h:commandButton value="Ingresar al taller"
+							styleClass="botonIngresarHangout"></h:commandButton>
+						<!--                             Presentacion del Video HangOut -->
+						<div id="displayVideo" class="displayVideoHangout">
+							<p:media id="usuarioVideo" value="#{hangOutBean.ruta}"
+								width="780" height="439" player="flash"
+								rendered="#{hangOutBean.existeHangOut}" />
+						</div>
+					</p:tab>
+					<p:tab title="DESCRIPCIÓN DE LA SESIÓN">
+						<h:panelGrid columns="2" cellpadding="0">
+							<!--                                 Se crean los paneles compartidos -->
+							<h:panelGrid columns="2" cellpadding="0">
+								<h:panelGrid columns="2">
+									<p:outputLabel value="Nivel:"
+										styleClass="subtituloDescripcionHangout"></p:outputLabel>
+									<p:outputLabel id="outNivel" value="#{hangOutBean.nivel}"
+										styleClass="valorDescripcionHangout"></p:outputLabel>
+									<p:outputLabel value="Tecnologías:"
+										styleClass="subtituloDescripcionHangout"></p:outputLabel>
+									<p:outputLabel id="outTecnologias"
+										value="#{hangOutBean.tecnologias}"
+										styleClass="valorDescripcionHangout"></p:outputLabel>
+									<p:outputLabel value="Descripción:"
+										styleClass="subtituloDescripcionHangout"></p:outputLabel>
+									<p:outputLabel id="outDescripcion"
+										value="#{hangOutBean.descripcion}"
+										styleClass="valorDescripcionHangout"></p:outputLabel>
+								</h:panelGrid>
+								<h:panelGrid columns="2">
+									<h:panelGrid>
+										<p:graphicImage value="/resources/images/kerox_logo.jpg"
+											styleClass="fotoTutorHangout"></p:graphicImage>
+									</h:panelGrid>
+									<h:panelGrid>
+										<p:outputLabel id="outNombreTutor"
+											value="#{hangOutBean.nombreTutor}"
+											styleClass="detalleTutorHangout"></p:outputLabel>
+										<p:outputLabel id="outCargoTutor"
+											value="#{hangOutBean.cargoTutor}"
+											styleClass="detalleTutorHangout"></p:outputLabel>
+										<p:outputLabel id="outInteresTutor"
+											value="#{hangOutBean.interesesTutor}"
+											styleClass="detalleTutorHangout"></p:outputLabel>
+									</h:panelGrid>
+								</h:panelGrid>
+							</h:panelGrid>
+							<!--                                 <h:outputText  value="Descripcion del tema que trata la sesion" />   -->
+						</h:panelGrid>
+					</p:tab>
+					<p:tab title="SOBRE EL EXPOSITOR">
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText
+								value="Este espacio es para escribir datos sobre el tutor." />
+						</h:panelGrid>
+					</p:tab>
+
+					<p:tab title="SESIONES RELACIONADAS (3)">
+						<h:panelGrid id="relacionados" columns="12" rows="1">
+							<h:panelGrid columns="2">
+								<img src="resources/images/screenmini.png" />
+								<h:panelGrid columns="1" style="width:170px; margin-top: -7px;">
+									<h:outputText value="PHP"
+										style="font-weight: bold; font-size: 12px;" />
+									<h:outputText value="16 participantes" />
+								</h:panelGrid>
+							</h:panelGrid>
+
+							<h:panelGrid columns="2">
+								<img src="resources/images/screenmini.png" />
+								<h:panelGrid columns="1" style="width:170px; margin-top: -7px;">
+									<h:outputText value="JSF"
+										style="font-weight: bold; font-size: 12px;" />
+									<h:outputText value="13 participantes" />
+								</h:panelGrid>
+							</h:panelGrid>
+
+							<h:panelGrid columns="2">
+								<img src="resources/images/screenmini.png" />
+								<h:panelGrid columns="1" style="width:170px; margin-top: -7px;">
+									<h:outputText value="Oracle"
+										style="font-weight: bold; font-size: 12px;" />
+									<h:outputText value="12 participantes" />
+								</h:panelGrid>
+							</h:panelGrid>
+						</h:panelGrid>
+					</p:tab>
+				</p:accordionPanel>
+			</h:form>
+		</p:layoutUnit>
+
+		<p:layoutUnit position="east" size="380px"
+			header="Chat de participantes" resizable="false" closable="true"
+			collapsible="true">
+			<h:form id="form2">
+				<center>
+					<p:commandButton value="Unirse a la clase"
+						style="margin-left: auto; margin-right: auto;" />
+				</center>
+
+
+				<p:scrollPanel id="scroll" style="width:275px; height: 320px">
+					<p:dataGrid id="dataComentarios" var="comentario"
+						value="#{sesion.comentarios}" columns="1" rows="12">
+						<h:panelGrid id="com" columns="1"
+							style="width:230px; margin-top: -7px;">
+							<h:panelGrid columns="2" style="padding-left: -10px">
+								<h:graphicImage rendered="#{comentario.tipoAutor=='usuario'}">
+									<img src="resources/images/usuarioIcono.png" />
+								</h:graphicImage>
+								<h:graphicImage rendered="#{comentario.tipoAutor=='invitado'}">
+									<img src="resources/images/usuarioIconoV.png" />
+								</h:graphicImage>
+								<h:outputText value="#{comentario.autor}"
+									style="font-weight: bold; color:rgb(35,35,196); font-size: 12px; text-align: left;"
+									rendered="#{comentario.tipoAutor=='usuario'}" />
+								<h:outputText value="#{comentario.autor}"
+									style="font-weight: bold; color:rgb(183,183,183); font-size: 12px; text-align: left;"
+									rendered="#{comentario.tipoAutor=='invitado'}" />
+							</h:panelGrid>
+
+
+							<h:panelGrid columns="1"
+								style="width:100%; margin-top: -10px; margin-left: auto; margin-right: auto;">
+								<h:graphicImage rendered="#{comentario.tipoAutor=='usuario'}">
+									<img src="resources/images/vineta1.png" />
+								</h:graphicImage>
+								<h:graphicImage rendered="#{comentario.tipoAutor=='invitado'}">
+									<img src="resources/images/vineta1V.png" />
+								</h:graphicImage>
+							</h:panelGrid>
+
+
+							<h:panelGrid columns="1"
+								style="width:100%;background-image: url('resources/images/vineta2.png'); margin-top: -7px; background-position: center; background-repeat: repeat-y; "
+								rendered="#{comentario.tipoAutor=='usuario'}">
+								<h:outputText value="#{comentario.mensaje}"
+									style="color:white; margin-left: 15px !important;" />
+							</h:panelGrid>
+							<h:panelGrid columns="1"
+								style="width:100%;background-image: url('resources/images/vineta2V.png'); margin-top: -7px; background-position: center; background-repeat: repeat-y; "
+								rendered="#{comentario.tipoAutor=='invitado'}">
+								<h:outputText value="#{comentario.mensaje}"
+									style="color:white; margin-left: 15px !important;" />
+							</h:panelGrid>
+
+							<h:panelGrid columns="1"
+								style="width:100%; margin-top: -7px; margin-bottom: -10px; margin-left: auto; margin-right: auto;">
+								<h:graphicImage rendered="#{comentario.tipoAutor=='usuario'}">
+									<img src="resources/images/vineta3.png" />
+								</h:graphicImage>
+								<h:graphicImage rendered="#{comentario.tipoAutor=='invitado'}">
+									<img src="resources/images/vineta3V.png" />
+								</h:graphicImage>
+							</h:panelGrid>
+						</h:panelGrid>
+
+
+					</p:dataGrid>
+				</p:scrollPanel>
+			</h:form>
+			<h:form id="form3">
+				<h:panelGrid columns="1" style="height: 30%; width: 100%">
+					<h:panelGrid columns="2">
+						<h:outputText value="Nombre:" />
+						<p:inputText id="autor" value="#{sesion.autor}" />
+					</h:panelGrid>
+					<h:outputText value="Escribe tu mensaje:" />
+					<p:inputTextarea id="mensaje" cols="43"
+						value="#{sesion.nuevoMensaje}" />
+					<p:commandButton value="Enviar"
+						style="margin-left: auto; margin-right: auto;"
+						action="#{sesion.agregarComentario}"
+						update=":form2:dataComentarios :form2:scroll :form3:autor :form3:mensaje" />
+				</h:panelGrid>
+			</h:form>
+		</p:layoutUnit>
+
+	</p:layout>
+
+
+	<!--     Codigo Agregado para el Push del HangOut -->
+	<p:socket onMessage="handleMessage" channel="/videoCanal">
+		<p:ajax event="message" update="usuarioForm:acordionPanel:outTitulo" />
+		<p:ajax event="message" update="usuarioForm:acordionPanel:outNivel" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outTecnologias" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outDescripcion" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outNombreTutor" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outCargoTutor" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outInteresTutor" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outInteresTutor" />
+	</p:socket>
+	<script type='text/javascript'>
+		function handleMessage(data) {
+			$('#displayVideo').html(data);
+		}
+	</script>
+</h:body>
+</html>
+
