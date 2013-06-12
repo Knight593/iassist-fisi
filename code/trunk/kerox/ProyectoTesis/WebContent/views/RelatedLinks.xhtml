@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:repeat var="_item"
+		value="#{articulosRelacionadosBean.articulosRelacionados}">
+		<p:panel>
+			<div>
+				<h:graphicImage value="#{_item.rutaImagen}" />
+			</div>
+			<div>
+				<h:outputLink value="#{_item.urlPost}" target="_blank">
+					<h:outputLabel value="#{_item.tituloPost}" />
+				</h:outputLink>
+			</div>
+		</p:panel>
+	</ui:repeat>
+
+</ui:composition>
