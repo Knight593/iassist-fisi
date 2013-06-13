@@ -6,26 +6,26 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-	<h:outputStylesheet name="common-style.css" library="css" />
+	<link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/resources/styles/default.css" />
 </h:head>
 
 <h:body>
 
 	<div id="page">
-
-		<div id="header">
+	
+		<div id="header" class="header">
 			<ui:insert name="header">
 				<ui:include src="/views/CommonHeader.xhtml" />
 			</ui:insert>
 		</div>
 
-		<div id="content">
+		<div id="content" class="content" >
 			<ui:insert name="content">
 				<ui:include src="/views/CommonContent.xhtml" />
 			</ui:insert>
 		</div>
 
-		<div id="footer">
+		<div id="footer" class="footer">
 			<ui:insert name="footer">
 				<ui:include src="/views/CommonFooter.xhtml" />
 			</ui:insert>

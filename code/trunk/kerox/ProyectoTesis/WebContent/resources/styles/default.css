@@ -1,0 +1,25 @@
+.header {
+	position: fixed;
+	width: 99%;
+	top: 0;
+	z-index: 1004;
+}
+
+.content {
+	margin-top: 65px;
+	overflow: hidden;
+}
+
+.footer {
+	color: red;
+	margin-top: 15px;
+}
+
+.panelDerecho {
+	float: right;
+	width: 350px;
+}
+
+.panelCentral{
+	margin-right: 360px;
+}

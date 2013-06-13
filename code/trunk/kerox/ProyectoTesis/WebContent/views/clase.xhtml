@@ -1,0 +1,116 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<h:form id="usuarioForm">
+		<p:accordionPanel id="acordionPanel" activeIndex="0" multiple="true"
+			styleClass="panelAcordionHangout">
+			<p:tab title="SESION EN VIVO" disabled="true">
+				<p:outputLabel id="outTitulo" value="#{hangOutBean.titulo}"
+					styleClass="tituloHangout" />
+				<h:commandButton value="Ingresar al taller"
+					styleClass="botonIngresarHangout"></h:commandButton>
+				<div id="displayVideo" class="displayVideoHangout">
+					<p:media id="usuarioVideo" value="#{hangOutBean.ruta}" width="780"
+						height="439" player="flash"
+						rendered="#{hangOutBean.existeHangOut}" />
+				</div>
+			</p:tab>
+			<p:tab title="DESCRIPCION DE LA SESION">
+				<h:panelGrid columns="2" cellpadding="0">
+					<h:panelGrid columns="2" cellpadding="0">
+						<h:panelGrid columns="2">
+							<p:outputLabel value="Nivel:"
+								styleClass="subtituloDescripcionHangout"></p:outputLabel>
+							<p:outputLabel id="outNivel" value="#{hangOutBean.nivel}"
+								styleClass="valorDescripcionHangout"></p:outputLabel>
+							<p:outputLabel value="Tecnologias:"
+								styleClass="subtituloDescripcionHangout"></p:outputLabel>
+							<p:outputLabel id="outTecnologias"
+								value="#{hangOutBean.tecnologias}"
+								styleClass="valorDescripcionHangout"></p:outputLabel>
+							<p:outputLabel value="Descripcion:"
+								styleClass="subtituloDescripcionHangout"></p:outputLabel>
+							<p:outputLabel id="outDescripcion"
+								value="#{hangOutBean.descripcion}"
+								styleClass="valorDescripcionHangout"></p:outputLabel>
+						</h:panelGrid>
+						<h:panelGrid columns="2">
+							<h:panelGrid>
+								<p:graphicImage value="/resources/images/kerox_logo.jpg"
+									styleClass="fotoTutorHangout"></p:graphicImage>
+							</h:panelGrid>
+							<h:panelGrid>
+								<p:outputLabel id="outNombreTutor"
+									value="#{hangOutBean.nombreTutor}"
+									styleClass="detalleTutorHangout"></p:outputLabel>
+								<p:outputLabel id="outCargoTutor"
+									value="#{hangOutBean.cargoTutor}"
+									styleClass="detalleTutorHangout"></p:outputLabel>
+								<p:outputLabel id="outInteresTutor"
+									value="#{hangOutBean.interesesTutor}"
+									styleClass="detalleTutorHangout"></p:outputLabel>
+							</h:panelGrid>
+						</h:panelGrid>
+					</h:panelGrid>
+				</h:panelGrid>
+			</p:tab>
+			<p:tab title="SOBRE EL EXPOSITOR">
+				<h:panelGrid columns="2" cellpadding="10">
+					<h:outputText
+						value="Este espacio es para escribir datos sobre el tutor." />
+				</h:panelGrid>
+			</p:tab>
+			<p:tab title="SESIONES RELACIONADAS (3)">
+				<h:panelGrid id="relacionados" columns="12" rows="1">
+					<h:panelGrid columns="2">
+						<img src="resources/images/screenmini.png" />
+						<h:panelGrid columns="1" style="width:170px; margin-top: -7px;">
+							<h:outputText value="PHP"
+								style="font-weight: bold; font-size: 12px;" />
+							<h:outputText value="16 participantes" />
+						</h:panelGrid>
+					</h:panelGrid>
+					<h:panelGrid columns="2">
+						<img src="resources/images/screenmini.png" />
+						<h:panelGrid columns="1" style="width:170px; margin-top: -7px;">
+							<h:outputText value="JSF"
+								style="font-weight: bold; font-size: 12px;" />
+							<h:outputText value="13 participantes" />
+						</h:panelGrid>
+					</h:panelGrid>
+					<h:panelGrid columns="2">
+						<img src="resources/images/screenmini.png" />
+						<h:panelGrid columns="1" style="width:170px; margin-top: -7px;">
+							<h:outputText value="Oracle"
+								style="font-weight: bold; font-size: 12px;" />
+							<h:outputText value="12 participantes" />
+						</h:panelGrid>
+					</h:panelGrid>
+				</h:panelGrid>
+			</p:tab>
+		</p:accordionPanel>
+	</h:form>
+	<!--     Codigo Agregado para el Push del HangOut -->
+	<p:socket onMessage="handleMessage" channel="/videoCanal">
+		<p:ajax event="message" update="usuarioForm:acordionPanel:outTitulo" />
+		<p:ajax event="message" update="usuarioForm:acordionPanel:outNivel" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outTecnologias" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outDescripcion" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outNombreTutor" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outCargoTutor" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outInteresTutor" />
+		<p:ajax event="message"
+			update="usuarioForm:acordionPanel:outInteresTutor" />
+	</p:socket>
+	<script type='text/javascript'>
+		function handleMessage(data) {
+			$('#displayVideo').html(data);
+		}
+	</script>
+</ui:composition>
