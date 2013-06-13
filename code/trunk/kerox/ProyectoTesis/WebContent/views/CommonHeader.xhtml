@@ -2,56 +2,57 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:f="http://java.sun.com/jsf/core">
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:f="http://java.sun.com/jsf/core">
 <head>
 </head>
 <body>
-	<ui:composition>
-		<h:form>
-			<p:menubar autoDisplay="false">
-				<p:menuitem value="KeroxTeam" />
-				<p:menuitem value="Clases" />
-				<p:submenu label="Acerca De">
-					<p:menuitem value="Quienes Somos" />
-					<p:menuitem value="Contactanos" />
-				</p:submenu>
-
-				<f:facet name="options">
-					<p:commandButton id="loginButton" type="button" value="Acceder" />
-					<p:commandButton id="logoutButton" type="button" value="Salir" />
-					<p:commandButton id="registerButton" type="button"
-						value="Registrarse" />
-				</f:facet>
-			</p:menubar>
-
-			<p:overlayPanel id="loginPanel" for="loginButton" hideEffect="fade"
-				dynamic="true">
-				<p:panelGrid>
-					<p:row>
-						<p:column colspan="2">
-							<p:inputText alt="User" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column colspan="2">
-							<p:inputText alt="Password" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column>
-							<p:selectBooleanCheckbox />
-							<h:outputText value=" Recordarme" />
-						</p:column>
-						<p:column>
-							<p:commandButton value="Iniciar Sesión" />
-						</p:column>
-					</p:row>
-				</p:panelGrid>
-			</p:overlayPanel>
-		</h:form>
-	</ui:composition>
+  <ui:composition>
+    <h:form>
+      <p:menubar autoDisplay="false">
+        <p:menuitem value="KeroxTeam" />
+        <p:menuitem value="Clases" />
+        <p:submenu label="Acerca De">
+          <p:menuitem value="Quienes Somos" />
+          <p:menuitem value="Contactanos" />
+        </p:submenu>
+        <f:facet name="options">
+          <p:commandButton id="loginButton" type="button"
+            value="Acceder" />
+          <p:commandButton id="logoutButton" type="button" value="Salir" />
+          <p:commandButton id="registerButton" type="button"
+            value="Registrarse" />
+        </f:facet>
+      </p:menubar>
+      <p:overlayPanel id="loginPanel" for="loginButton"
+        hideEffect="fade" dynamic="true">
+        <p:panelGrid>
+          <p:row>
+            <p:column colspan="2">
+              <p:inputText id="userText" />
+              <p:watermark for="userText" value="Usuario" />
+            </p:column>
+          </p:row>
+          <p:row>
+            <p:column colspan="2">
+              <p:inputText id="passText" />
+              <p:watermark for="passText" value="Contraseña" />
+            </p:column>
+          </p:row>
+          <p:row>
+            <p:column>
+              <p:selectBooleanCheckbox />
+              <h:outputText value=" Recordarme" />
+            </p:column>
+            <p:column>
+              <p:commandButton value="Iniciar Sesión" />
+            </p:column>
+          </p:row>
+        </p:panelGrid>
+      </p:overlayPanel>
+    </h:form>
+  </ui:composition>
 </body>
 </html>
