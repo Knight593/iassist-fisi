@@ -3,11 +3,28 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link rel="stylesheet" type="text/css"
+		href="${facesContext.externalContext.requestContextPath}/resources/styles/default.css" />
+	<link rel="stylesheet" type="text/css"
+		href="${facesContext.externalContext.requestContextPath}/resources/styles/destilos.css" />
+</h:head>
 <h:body>
-
 	<ui:composition template="/views/CommonLayout.xhtml">
-
+		<ui:define name="content">
+			<p:panel styleClass="panelDerecho">
+				<ui:insert>
+					<ui:include src="/views/RelatedLinks.xhtml" />
+				</ui:insert>
+			</p:panel>
+			<p:panel styleClass="panelCentral">
+				<ui:insert>
+					<ui:include src="/views/clase.xhtml" />
+				</ui:insert>
+			</p:panel>
+		</ui:define>
 	</ui:composition>
 
 </h:body>
