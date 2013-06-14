@@ -16,6 +16,7 @@ public class ArticulosRelacionadosBean {
 
   public ArticulosRelacionadosBean() {
     this.articulosRelacionados = obtenerArticulosRelacionados();
+    System.out.println("JUANKARIAN");
   }
 
   private List<ArticuloRealcionado> obtenerArticulosRelacionados() {
