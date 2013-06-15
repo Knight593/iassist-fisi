@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
@@ -12,7 +12,7 @@
     <p:panel id="panelTabPadre" rendered="#{tutorSesionBean.sesionActiva}" styleClass="panelTabPadre">
 	    <p:tabView id="tabsPanel" styleClass="panelTabs">
 	        <p:tab id="tabInformacion" title="Informaci&oacute;n del tutor" titleStyleClass="panelInformacion">
-	            <p:outputLabel id="tituloTabInformacion" value="Información del Tutor" styleClass="tituloPanelInformacion"></p:outputLabel>
+	            <p:outputLabel id="tituloTabInformacion" value="InformaciÃ³n del Tutor" styleClass="tituloPanelInformacion"></p:outputLabel>
 	            <br/><br/>
 	            <h:panelGrid id="panelTabInformacion" border="0" columns="2" styleClass="panelInformacion">
 	               <p:outputLabel value="Nombre:" styleClass="descripcionPanelInformacion"></p:outputLabel>
@@ -23,7 +23,7 @@
 	        </p:tab>
 	        <p:tab id="tabHangout" title="Nuevo HangOut" titleStyleClass="tabTituloHangOut">
 	           <h:form>
-	               <p:outputLabel id="tituloTabInformacion" value="Información del Tutor" styleClass="tituloPanelTabsTutorHome"></p:outputLabel>
+	               <p:outputLabel id="tituloTabInformacion" value="InformaciÃ³n del Tutor" styleClass="tituloPanelTabsTutorHome"></p:outputLabel>
 	               <br/><br/>
 	               <h:panelGrid id="panelTabHangout" border="0" columns="2" styleClass="panelTabsTutorHome">
 	                   <p:outputLabel value="Link del Nuevo HangOut:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
@@ -40,6 +40,19 @@
 	               </h:panelGrid>
 	           </h:form>
 	        </p:tab>
+          <p:tab id="tabLinksRelacionados" title="agregar links de interes">
+            <h:form>
+                <h:panelGrid id="panelTabHangout" border="0" columns="2" styleClass="panelTabsTutorHome">
+                     <p:outputLabel value="Titulo del Articulo:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                     <p:inputText value="#{articulosRelacionadosBean.tituloAgregar}" size="100"></p:inputText>
+                     <p:outputLabel value="Imagen de referencia" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                       <p:inputText value="#{articulosRelacionadosBean.imagenAgregar}" size="40"></p:inputText>
+                     <p:outputLabel value="URL del Articulo" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                       <p:inputText value="#{articulosRelacionadosBean.urlAgregar}" size="20"></p:inputText>
+                       <h:commandButton value="Agregar Link" actionListener="#{articulosRelacionadosBean.agregarArticuloRelacionado}"></h:commandButton>
+                 </h:panelGrid>
+            </h:form>
+          </p:tab>
 	    </p:tabView>
     </p:panel>
 </h:body>

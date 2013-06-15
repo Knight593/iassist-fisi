@@ -1,15 +1,45 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
-	<ui:repeat var="_item"
-		value="#{articulosRelacionadosBean.articulosRelacionados}">
-		<p:panel id="panelArticulosRelacionados">
-		  <h:panelGrid id="panelGridArticulosRelacionados" columns="2" cellpadding="0" border="0">
-		      <p:graphicImage styleClass="divImagenArticuloRelacionado" value="#{_item.rutaImagen}"/>
-              <h:outputLabel styleClass="divTituloArticuloRelacionado" value="#{_item.tituloPost}" />
-		  </h:panelGrid>
-		  <h:outputLink styleClass="divUrlArticuloRelacionado" title="Averígualo"  value="http://www.google.com" target="_blank" >Averígualo</h:outputLink>
-		</p:panel>
-	</ui:repeat>
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui">
+  <p:scrollPanel id="panelEnlacesInteres"
+    styleClass="panelEnlacesInteres">
+    <ui:repeat var="_item"
+      value="#{articulosRelacionadosBean.articulosRelacionados}">
+      <div class="enlaceRelacionado">
+        <div class="contenedorImagen">
+          <h:graphicImage value="#{_item.rutaImagen}"
+            styleClass="imagenRelacionada" />
+        </div>
+        <div class="contenidoEnlace">
+          <h:outputLink value="#{_item.urlPost}" target="_blank">
+            <h:outputLabel value="#{_item.tituloPost}" />
+          </h:outputLink>
+        </div>
+      </div>
+    </ui:repeat>
+  </p:scrollPanel>
+  <p:scrollPanel id="panelEnlacesRelacionados"
+    styleClass="panelEnlacesRelacionados">
+    <ui:repeat var="_item"
+      value="#{articulosRelacionadosBean.articulosRelacionados}">
+      <div class="enlaceRelacionado">
+        <div class="contenedorImagen">
+          <h:graphicImage value="#{_item.rutaImagen}"
+            styleClass="imagenRelacionada" />
+        </div>
+        <div class="contenidoEnlace">
+          <h:outputLink value="#{_item.urlPost}" target="_blank">
+            <h:outputLabel value="#{_item.tituloPost}" />
+          </h:outputLink>
+        </div>
+      </div>
+    </ui:repeat>
+  </p:scrollPanel>
+  <p:socket channel="LinkRelacionado">
+    <p:ajax event="message" update="panelEnlacesRelacionados" />
+  </p:socket>
+  <p:socket channel="LinkRelacionado">
+    <p:ajax event="message" update="panelEnlacesInteres" />
+  </p:socket>
 </ui:composition>
