@@ -33,7 +33,7 @@ body {
 
 /* Estilos Menu Bar Header */
 .menuBarHeader {
-    height: 38px;
+    height: 44px;
     background-image: url("../images/fondo_header_azul.png");
     border: solid 0;
 }
