@@ -1,6 +1,6 @@
 .header {
 	position: fixed;
-	width: 99%;
+	width: 100%;
 	top: 0;
 	z-index: 1004;
 }
@@ -22,4 +22,47 @@
 
 .panelCentral{
 	margin-right: 360px;
+	background-color: #FFE286;
+}
+
+/* Estilos Pagina Principal */
+body {
+	background-color: #FFF4C9 !important;
+    margin: 0;
+}
+
+/* Estilos Menu Bar Header */
+.menuBarHeader {
+    height: 38px;
+    background-image: url("../images/fondo_header_azul.png");
+    border: solid 0;
+}
+
+/* Estilos Panel Footer */
+.panelFooterDerechosReservados {
+	background-color: #B2B2B2;
+	border-top: 3px solid;
+	text-align: right;
+}
+
+.linksFooter {
+	text-decoration: none;
+    text-align: left;
+    color: black;
+    margin-left: 20px;  
+}
+
+.linksFooter:hover {
+    text-decoration: none;
+    text-align: left;
+    color: blue;
+    margin-left: 20px;  
+}
+
+.descripcionDerechosReservados {
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
 }

@@ -5,18 +5,19 @@
 	<h:form id="usuarioForm">
 		<p:accordionPanel id="acordionPanel" activeIndex="0" multiple="true"
 			styleClass="panelAcordionHangout">
-			<p:tab title="SESION EN VIVO" disabled="true">
+			<p:tab title="Último Software Desarrollado" disabled="true" >
+                <h:commandButton value="Ingresar al taller"
+                    styleClass="botonIngresarHangout"></h:commandButton>
 				<p:outputLabel id="outTitulo" value="#{hangOutBean.titulo}"
 					styleClass="tituloHangout" />
-				<h:commandButton value="Ingresar al taller"
-					styleClass="botonIngresarHangout"></h:commandButton>
+				<br/><br/>
 				<div id="displayVideo" class="displayVideoHangout">
 					<p:media id="usuarioVideo" value="#{hangOutBean.ruta}" width="780"
 						height="439" player="flash"
 						rendered="#{hangOutBean.existeHangOut}" />
 				</div>
 			</p:tab>
-			<p:tab title="DESCRIPCION DE LA SESION">
+			<p:tab title="Descripción del Software Desarrollado">
 				<h:panelGrid columns="2" cellpadding="0">
 					<h:panelGrid columns="2" cellpadding="0">
 						<h:panelGrid columns="2">
@@ -55,13 +56,7 @@
 					</h:panelGrid>
 				</h:panelGrid>
 			</p:tab>
-			<p:tab title="SOBRE EL EXPOSITOR">
-				<h:panelGrid columns="2" cellpadding="10">
-					<h:outputText
-						value="Este espacio es para escribir datos sobre el tutor." />
-				</h:panelGrid>
-			</p:tab>
-			<p:tab title="SESIONES RELACIONADAS (3)">
+			<p:tab title="SESIONES RELACIONADAS (3)" rendered="false">
 				<h:panelGrid id="relacionados" columns="12" rows="1">
 					<h:panelGrid columns="2">
 						<img src="resources/images/screenmini.png" />

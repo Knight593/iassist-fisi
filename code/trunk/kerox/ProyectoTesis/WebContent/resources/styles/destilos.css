@@ -105,20 +105,18 @@
 	display: inline-block;
 	text-align: left;
 	color: #4E7DFF;
-	font-size: 15px;
+	font-size: 20px;
 	font-weight: bold;
 	margin-left: 40px;
-	width: 600px;
 }
 
 .botonIngresarHangout {
-	display: inline-block;
+	display: block;
 	border: 1px solid #168DD9;
 	background-color: #27ABFF;
 	color: white;
 	font-size: 15px !important;
 	font-weight: bold;
-	margin-left: 150px;
 	width: 150px;
 }
 
@@ -162,5 +160,6 @@
 }
 
 .panelAcordionHangout {
-	width: 1036px;
+	width: 100%;
+	border: 1px solid white;
 }

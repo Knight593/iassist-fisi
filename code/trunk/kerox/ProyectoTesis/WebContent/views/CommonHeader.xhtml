@@ -11,19 +11,19 @@
 <body>
   <ui:composition>
     <h:form>
-      <p:menubar autoDisplay="false">
-        <p:menuitem value="KeroxTeam" />
-        <p:menuitem value="Clases" />
-        <p:submenu label="Acerca De">
+      <p:menubar autoDisplay="false" styleClass="menuBarHeader">
+        <p:menuitem value="KeroxTeam" rendered="false"/>
+        <p:menuitem value="Clases" rendered="false"/>
+        <p:submenu label="Acerca De" rendered="false">
           <p:menuitem value="Quienes Somos" />
           <p:menuitem value="Contactanos" />
         </p:submenu>
         <f:facet name="options">
           <p:commandButton id="loginButton" type="button"
-            value="Acceder" />
-          <p:commandButton id="logoutButton" type="button" value="Salir" />
+            value="Acceder" rendered="false"/>
+          <p:commandButton id="logoutButton" type="button" value="Salir" rendered="false"/>
           <p:commandButton id="registerButton" type="button"
-            value="Registrarse" />
+            value="Registrarse" rendered="false"/>
         </f:facet>
       </p:menubar>
       <p:overlayPanel id="loginPanel" for="loginButton"
