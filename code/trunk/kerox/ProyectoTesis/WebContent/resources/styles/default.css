@@ -18,6 +18,7 @@
 .panelDerecho {
 	float: right;
 	width: 350px;
+	background-color: #FFE286;
 }
 
 .panelCentral{
@@ -49,14 +50,16 @@ body {
 	text-decoration: none;
     text-align: left;
     color: black;
-    margin-left: 20px;  
+    margin-left: 20px;
+    font-size: 14px;
 }
 
 .linksFooter:hover {
     text-decoration: none;
     text-align: left;
     color: blue;
-    margin-left: 20px;  
+    margin-left: 20px;
+    font-weight: bold;
 }
 
 .descripcionDerechosReservados {
@@ -65,4 +68,26 @@ body {
     margin: 0;
     font-size: 12px;
     font-weight: bold;
+}
+/* Estilos Panel Derecho */
+.divImagenArticuloRelacionado {
+	display: inline-block;
+    border-right: 1px solid blue;
+    padding-right: 3px;
+}
+
+.divTituloArticuloRelacionado {
+	display: inline-block;
+	font-style: italic;
+    font-size: 20px;
+}
+
+.divUrlArticuloRelacionado {
+	margin-top: 5px;
+	display: block;
+	text-decoration: none;
+	border-top: 1px solid blue;
+	color: blue !important;
+	font-size: 13px;
+	text-align: right;
 }
