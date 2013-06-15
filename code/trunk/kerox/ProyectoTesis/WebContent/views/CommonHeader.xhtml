@@ -11,7 +11,10 @@
 <body>
   <ui:composition>
     <h:form>
-      <p:menubar autoDisplay="false" styleClass="menuBarHeader">
+      <p:panel styleClass="menuBarHeader">
+        <p:graphicImage value="/resources/images/logo.png" ></p:graphicImage>
+      </p:panel>
+      <p:menubar autoDisplay="false" styleClass="menuBarHeader" rendered="false">
         <p:menuitem value="KeroxTeam" rendered="false"/>
         <p:menuitem value="Clases" rendered="false"/>
         <p:submenu label="Acerca De" rendered="false">
