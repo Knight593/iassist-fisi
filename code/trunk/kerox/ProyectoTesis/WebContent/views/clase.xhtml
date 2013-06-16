@@ -6,8 +6,8 @@
 		<p:accordionPanel id="acordionPanel" activeIndex="0" multiple="true"
 			styleClass="panelAcordionHangout">
 			<p:tab title="Último Software Desarrollado" disabled="true" >
-                <h:commandButton value="Ingresar al taller"
-                    styleClass="botonIngresarHangout"></h:commandButton>
+                <h:outputLink id="outLinkHangout"  value="#{hangOutBean.rutaHangOut}"
+                    styleClass="botonIngresarHangout" target="_blank">Ingresar al taller</h:outputLink>
 				<p:outputLabel id="outTitulo" value="#{hangOutBean.titulo}"
 					styleClass="tituloHangout" />
 				<br/><br/>
@@ -102,6 +102,8 @@
 			update="usuarioForm:acordionPanel:outInteresTutor" />
 		<p:ajax event="message"
 			update="usuarioForm:acordionPanel:outInteresTutor" />
+		<p:ajax event="message"
+            update="usuarioForm:acordionPanel:outLinkHangout" />
 	</p:socket>
 	<script type='text/javascript'>
 		function handleMessage(data) {

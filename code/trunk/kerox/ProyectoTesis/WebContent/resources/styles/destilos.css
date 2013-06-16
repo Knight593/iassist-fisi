@@ -112,9 +112,11 @@
 
 .botonIngresarHangout {
 	display: block;
+	text-decoration: none;
+	text-align: center;
 	border: 1px solid #168DD9;
 	background-color: #27ABFF;
-	color: white;
+	color: white !important;
 	font-size: 15px !important;
 	font-weight: bold;
 	width: 150px;
