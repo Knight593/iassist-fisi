@@ -11,7 +11,7 @@
     <p:outputLabel value="Error - Acceso Restringido." rendered="#{!tutorSesionBean.sesionActiva}" styleClass="mensajeErrorLogin"></p:outputLabel>
     <p:panel id="panelTabPadre" rendered="#{tutorSesionBean.sesionActiva}" styleClass="panelTabPadre">
 	    <p:tabView id="tabsPanel" styleClass="panelTabs">
-	        <p:tab id="tabInformacion" title="Informaci&oacute;n del tutor" titleStyleClass="panelInformacion">
+	        <p:tab id="tabInformacion" title="Información del tutor" titleStyleClass="panelInformacion">
 	            <p:outputLabel id="tituloTabInformacion" value="Información del Tutor" styleClass="tituloPanelInformacion"></p:outputLabel>
 	            <br/><br/>
 	            <h:panelGrid id="panelTabInformacion" border="0" columns="2" styleClass="panelInformacion">
@@ -26,15 +26,17 @@
 	               <p:outputLabel id="tituloTabInformacion" value="Información del Tutor" styleClass="tituloPanelTabsTutorHome"></p:outputLabel>
 	               <br/><br/>
 	               <h:panelGrid id="panelTabHangout" border="0" columns="2" styleClass="panelTabsTutorHome">
-	                   <p:outputLabel value="Link del Nuevo HangOut:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                       <p:outputLabel value="Link del HangOut" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                       <p:inputText value="#{hangOutBean.rutaHangOut}" size="100"></p:inputText>
+	                   <p:outputLabel value="Link de YouTube:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
 	                   <p:inputText value="#{hangOutBean.ruta}" size="100"></p:inputText>
-	                   <p:outputLabel value="T&iacute;tulo del HangOut:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+	                   <p:outputLabel value="Título del HangOut:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
                        <p:inputText value="#{hangOutBean.titulo}" size="40"></p:inputText>
 	                   <p:outputLabel value="Nivel:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
                        <p:inputText value="#{hangOutBean.nivel}" size="20"></p:inputText>
-                       <p:outputLabel value="Tecnolog&iacute;as:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                       <p:outputLabel value="Tecnologías:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
                        <p:inputText value="#{hangOutBean.tecnologias}" size="80"></p:inputText>
-                       <p:outputLabel value="Descripci&oacute;n:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
+                       <p:outputLabel value="Descripción:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
                        <p:inputText value="#{hangOutBean.descripcion}" size="100"></p:inputText>
                        <h:commandButton colspan="2" value="Publicar HangOut" styleClass="botonPublicarHangout" actionListener="#{hangOutBean.actualizarVideo}"></h:commandButton>
 	               </h:panelGrid>

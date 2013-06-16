@@ -25,6 +25,7 @@ public class HangOutBean {
   private String cargoTutor;
   private String interesesTutor;
   // Detalles del video
+  private String rutaHangOut;
   private String ruta;
   private Media usuarioVideo;
 
@@ -123,7 +124,15 @@ public class HangOutBean {
     this.titulo = titulo;
   }
 
-  public synchronized void actualizarVideo() {
+  public String getRutaHangOut() {
+	return rutaHangOut;
+  }
+
+  public void setRutaHangOut(final String rutaHangOut) {
+	this.rutaHangOut = rutaHangOut;
+  }
+
+public synchronized void actualizarVideo() {
     final String datos = "<iframe width='780' height='439' frameborder='0' allowfullscreen='1'  src='"
         + ruta + "'></iframe>";
     final FacesContext context = FacesContext.getCurrentInstance();

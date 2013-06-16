@@ -36,10 +36,10 @@
       </div>
     </ui:repeat>
   </p:scrollPanel>
-  <p:socket channel="LinkRelacionado">
+  <p:socket channel="/LinkRelacionado">
     <p:ajax event="message" update="panelEnlacesRelacionados" />
   </p:socket>
-  <p:socket channel="LinkRelacionado">
+  <p:socket channel="/LinkRelacionado">
     <p:ajax event="message" update="panelEnlacesInteres" />
   </p:socket>
 </ui:composition>
