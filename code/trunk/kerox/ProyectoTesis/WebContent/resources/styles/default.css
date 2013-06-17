@@ -1,146 +1,159 @@
 .header {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 1004;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1004;
 }
 
 .content {
-	margin-top: 65px;
-	overflow: hidden;
+  margin-top: 65px;
+  overflow: hidden;
 }
 
 .footer {
-	color: red;
-	margin-top: 15px;
+  color: red;
+  margin-top: 15px;
+  margin-right: 290px;
 }
 
 .panelDerecho {
-	float: right;
-	width: 270px;
-	background-color: #FFE286;
-	position: fixed;
-	top: 65px;
-	right: 10px;
-	min-height: 400px;;
+  float: right;
+  width: 270px;
+  background-color: #FFE286;
+  position: fixed;
+  top: 65px;
+  right: 10px;
+  min-height: 400px;;
+  overflow: hidden;
+  padding: 5px;
 }
 
 .panelCentral {
-	margin-right: 290px;
-	background-color: #FFE286;
+  margin-right: 290px;
+  background-color: #FFE286;
 }
 
-
-.enlaceRelacionado {
-	border-top-color: gray;
-	border-top-style: solid;
-	border-top-width: 1px;
-	font-size: 13px;
-	height: 50px;
-	line-height: 13px;
-	overflow: hidden;
-	padding: 5px;
-	width: 250px;
-	cursor: pointer;
+/* Estilos panel lateral */
+.subPanelEnlaces {
+  margin-top: 10px;
 }
 
-.contenedorImagen {
-	float: left;
-	margin-right: 5px;
-}
-
-.imagenRelacionada {
-	width: 45px;
-}
-
-.contenidoEnlace {
-	font-family: tahoma;
-	height: 100%;
-	overflow: hidden;
-}
-
-.margenAzul{
-  border:1px solid blue;
-}
-.margenRojo{
-  border:1px solid red;
-}
-.tituloPanel{
+.tituloPanel {
   background-color: blue;
-  color:white;
+  color: white;
   padding: 5px;
   font-family: tahoma;
   font-weight: bold;
   font-size: 18px;
 }
 
-.panelEnlaces{
- min-height: 172px;
+.panelScroll {
+  height: 360px;
+  overflow: scroll;
+}
+
+.panelEnlaces {
+  
+}
+
+.enlaceRelacionado {
+  border-top-color: gray;
+  border-top-style: solid;
+  border-top-width: 1px;
+  font-size: 13px;
+  height: 50px;
+  line-height: 13px;
+  overflow: hidden;
+  padding: 5px;
+  width: 250px;
+  cursor: pointer;
+}
+
+.contenedorImagen {
+  float: left;
+  margin-right: 5px;
+}
+
+.imagenRelacionada {
+  width: 45px;
+}
+
+.contenidoEnlace {
+  font-family: tahoma;
+  height: 100%;
+  overflow: hidden;
+}
+
+.margenAzul {
+  border: 1px solid blue;
+}
+
+.margenRojo {
+  border: 1px solid red;
 }
 
 /* Estilos Pagina Principal */
 body {
-	background-color: #FFF4C9 !important;
-	margin: 0;
+  background-color: #FFF4C9 !important;
+  margin: 0;
 }
 
 /* Estilos Menu Bar Header */
 .menuBarHeader {
-	height: 44px;
-	background-image: url("../images/fondo_header_azul.png");
-	border: solid 0;
+  height: 44px;
+  background-image: url("../images/fondo_header_azul.png");
+  border: solid 0;
 }
 
 /* Estilos Panel Footer */
 .panelFooterDerechosReservados {
-	background-color: #B2B2B2;
-	border-top: 3px solid;
-	text-align: right;
+  background-color: #B2B2B2;
+  border-top: 3px solid;
+  text-align: right;
 }
 
 .linksFooter {
-	text-decoration: none;
-	text-align: left;
-	color: black;
-	margin-left: 20px;
-	font-size: 14px;
+  text-decoration: none;
+  text-align: left;
+  color: black;
+  margin-left: 20px;
+  font-size: 14px;
 }
 
 .linksFooter:hover {
-	text-decoration: none;
-	text-align: left;
-	color: blue;
-	margin-left: 20px;
-	font-weight: bold;
+  text-decoration: none;
+  text-align: left;
+  color: blue;
+  margin-left: 20px;
+  font-weight: bold;
 }
 
 .descripcionDerechosReservados {
-	text-align: center;
-	color: white;
-	margin: 0;
-	font-size: 12px;
-	font-weight: bold;
+  text-align: center;
+  color: white;
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
 }
 /* Estilos Panel Derecho */
 .divImagenArticuloRelacionado {
-	display: inline-block;
-	border-right: 1px solid blue;
-	padding-right: 3px;
+  display: inline-block;
+  border-right: 1px solid blue;
+  padding-right: 3px;
 }
 
 .divTituloArticuloRelacionado {
-	display: inline-block;
-	font-style: italic;
-	font-size: 20px;
+  display: inline-block;
+  font-style: italic;
+  font-size: 20px;
 }
 
 .divUrlArticuloRelacionado {
-	margin-top: 5px;
-	display: block;
-	text-decoration: none;
-	border-top: 1px solid blue;
-	color: blue !important;
-	font-size: 13px;
-	text-align: right;
+  margin-top: 5px;
+  display: block;
+  text-decoration: none;
+  border-top: 1px solid blue;
+  color: blue !important;
+  font-size: 13px;
+  text-align: right;
 }
-
