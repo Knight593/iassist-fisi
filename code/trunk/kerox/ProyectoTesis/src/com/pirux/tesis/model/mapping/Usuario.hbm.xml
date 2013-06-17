@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.pirux.tesis.model.Usuario" table="USUARIO" >
+        <id name="id" column="ID">
+            <generator class="native"></generator>
+        </id>
+	    <property name="nombre" column="NOMBRE"/>
+	    <property name="cargo" column="CARGO"/>
+	    <property name="interes" column="INTERES"/>
+	    <property name="correo" column="CORREO"/>
+	    <property name="usuario" column="USUARIO"/>
+	    <property name="password" column="PASSWORD"/>
+    </class>
+</hibernate-mapping>
