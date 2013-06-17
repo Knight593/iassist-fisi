@@ -2,55 +2,28 @@
   xmlns:ui="http://java.sun.com/jsf/facelets"
   xmlns:h="http://java.sun.com/jsf/html"
   xmlns:p="http://primefaces.org/ui">
-
-  <div id="container" class="contenedor">
-    <div class="margenRojo">
-      <div class="margenAzul tituloPanel">Links de Interes</div>
-      <div id="superior" class="margenAzul panelEnlaces">
-        <p:scrollPanel id="panelEnlacesInteres">
-          <ui:repeat var="_item"
-            value="#{articulosRelacionadosBean.articulosRelacionados}">
-            <div class="enlaceRelacionado">
-              <div class="contenedorImagen">
-                <h:graphicImage value="#{_item.rutaImagen}"
-                  styleClass="imagenRelacionada" />
-              </div>
-              <div class="contenidoEnlace">
-                <h:outputLink value="#{_item.urlPost}" target="_blank">
-                  <h:outputLabel value="#{_item.tituloPost}" />
-                </h:outputLink>
-              </div>
+  <div class="subPanelEnlaces">
+    <div class="tituloPanel">Links de Interes</div>
+    <div id="panelEnlacesInteres" class="panelScrollBar">
+      <p:panel id="panelActualizable" styleClass="panelEnlaces">
+        <ui:repeat var="_item"
+          value="#{articulosRelacionadosBean.articulosRelacionados}">
+          <div class="enlaceRelacionado">
+            <div class="contenedorImagen">
+              <h:graphicImage value="#{_item.rutaImagen}"
+                styleClass="imagenRelacionada" />
             </div>
-          </ui:repeat>
-        </p:scrollPanel>
-        <p:socket channel="/LinkRelacionado">
-          <p:ajax event="message" update="panelEnlacesInteres" />
-        </p:socket>
-      </div>
-    </div>
-    <div class="margenRojo">
-      <div class="margenAzul tituloPanel">Enlaces Relacionados</div>
-      <div id="inferior" class="margenAzul panelEnlaces">
-        <p:scrollPanel id="panelEnlacesRelacionados">
-          <ui:repeat var="_item"
-            value="#{articulosRelacionadosBean.articulosRelacionados}">
-            <div class="enlaceRelacionado">
-              <div class="contenedorImagen">
-                <h:graphicImage value="#{_item.rutaImagen}"
-                  styleClass="imagenRelacionada" />
-              </div>
-              <div class="contenidoEnlace">
-                <h:outputLink value="#{_item.urlPost}" target="_blank">
-                  <h:outputLabel value="#{_item.tituloPost}" />
-                </h:outputLink>
-              </div>
+            <div class="contenidoEnlace">
+              <h:outputLink value="#{_item.urlPost}" target="_blank">
+                <h:outputLabel value="#{_item.tituloPost}" />
+              </h:outputLink>
             </div>
-          </ui:repeat>
-        </p:scrollPanel>
-        <p:socket channel="/LinkRelacionado">
-          <p:ajax event="message" update="panelEnlacesRelacionados" />
-        </p:socket>
-      </div>
+          </div>
+        </ui:repeat>
+      </p:panel>
+      <p:socket channel="/LinkRelacionado">
+        <p:ajax event="message" update="panelActualizable" />
+      </p:socket>
     </div>
   </div>
 </ui:composition>
