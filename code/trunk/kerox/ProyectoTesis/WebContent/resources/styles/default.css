@@ -20,9 +20,9 @@
 	width: 270px;
 	background-color: #FFE286;
 	position: fixed;
-	top: 45px;
-	right: 0;
-	height: 100%;
+	top: 65px;
+	right: 10px;
+	min-height: 400px;;
 }
 
 .panelCentral {
@@ -30,13 +30,6 @@
 	background-color: #FFE286;
 }
 
-.panelEnlacesInteres {
-	height: 50%;
-}
-
-.panelEnlacesRelacionados {
-	height: 50%;
-}
 
 .enlaceRelacionado {
 	border-top-color: gray;
@@ -64,6 +57,25 @@
 	font-family: tahoma;
 	height: 100%;
 	overflow: hidden;
+}
+
+.margenAzul{
+  border:1px solid blue;
+}
+.margenRojo{
+  border:1px solid red;
+}
+.tituloPanel{
+  background-color: blue;
+  color:white;
+  padding: 5px;
+  font-family: tahoma;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.panelEnlaces{
+ min-height: 172px;
 }
 
 /* Estilos Pagina Principal */
@@ -131,3 +143,4 @@ body {
 	font-size: 13px;
 	text-align: right;
 }
+
