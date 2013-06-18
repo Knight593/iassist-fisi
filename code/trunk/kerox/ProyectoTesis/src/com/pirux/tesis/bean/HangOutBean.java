@@ -125,20 +125,21 @@ public class HangOutBean {
   }
 
   public String getRutaHangOut() {
-	return rutaHangOut;
+    return rutaHangOut;
   }
 
   public void setRutaHangOut(final String rutaHangOut) {
-	this.rutaHangOut = rutaHangOut;
+    this.rutaHangOut = rutaHangOut;
   }
 
-public synchronized void actualizarVideo() {
-    final String datos = "<iframe width='780' height='439' frameborder='0' allowfullscreen='1'  src='"
-        + ruta + "'></iframe>";
+  public synchronized void actualizarVideo() {
+    final String datos =
+            "<iframe width='780' height='439' frameborder='0' allowfullscreen='1'  src='" + ruta
+                    + "'></iframe>";
     final FacesContext context = FacesContext.getCurrentInstance();
-    final TutorSesionBean tutorBean = context.getApplication()
-        .evaluateExpressionGet(context, "#{tutorSesionBean}",
-            TutorSesionBean.class);
+    final TutorSesionBean tutorBean =
+            context.getApplication().evaluateExpressionGet(context, "#{tutorSesionBean}",
+                    TutorSesionBean.class);
     nombreTutor = tutorBean.getNombre();
     cargoTutor = tutorBean.getCargo();
     interesesTutor = tutorBean.getInteres();
@@ -146,8 +147,7 @@ public synchronized void actualizarVideo() {
     if (usuarioVideo != null) {
       usuarioVideo.setRendered(false);
     }
-    final PushContext pushContext = PushContextFactory.getDefault()
-        .getPushContext();
+    final PushContext pushContext = PushContextFactory.getDefault().getPushContext();
     pushContext.push("/videoCanal", datos);
   }
 }

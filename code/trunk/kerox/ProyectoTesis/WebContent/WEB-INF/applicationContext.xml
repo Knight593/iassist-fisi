@@ -14,7 +14,7 @@
   <bean id="hangOutBean" class="com.pirux.tesis.bean.HangOutBean" scope="application" />
   
    <!--   Configuracion de Hibernate -->
-	<bean id="oracleSessionFactory"
+	<bean id="mySqlSessionFactory"
 	   class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="configLocation">
 		      <value>WEB-INF/hibernate.cfg.xml</value>
@@ -26,7 +26,7 @@
             <!--    Falta Configurar -->
     </bean>
     <bean id="tutorDAO" class="com.pirux.tesis.dao.impl.UsuarioDAOImpl">
-        <property name="localSessionFactory" ref="oracleSessionFactory"/>
+        <property name="localSessionFactory" ref="mySqlSessionFactory"/>
     </bean>
     
     <!--     Configuracion de Service -->

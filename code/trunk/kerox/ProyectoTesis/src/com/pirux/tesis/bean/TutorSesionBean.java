@@ -91,63 +91,64 @@ public class TutorSesionBean {
   }
 
   public String loguear() {
-	  // Descomentar cuando tengas la BD formada
-//	  return loguearConBD();
-	  return loguearSinBD();
+    // Descomentar cuando tengas la BD formada
+    // return loguearConBD();
+    return loguearSinBD();
   }
 
-	public void setTutorLoginHandler(final LoginHandler tutorLoginHandler) {
-		this.tutorLoginHandler = tutorLoginHandler;
-	}
-	
-	/**
-	 * Logueo con BD
-	 */
-	private String loguearConBD() {
-		// Implementacion del logueo
-		tutorLoginHandler.setUsuario(usuario);
-		tutorLoginHandler.setPassword(password);
-		LoginResponse response = tutorLoginHandler.ejecutar();
-		if(response != null) {
-			Usuario tutor = response.getUsuario();
-			if(tutor != null) {
-				sesionActiva = true;
-				nombre = tutor.getNombre();
-				mail = tutor.getCorreo();
-				cargo = tutor.getCargo();
-				interes = tutor.getInteres();
-				rutaImagen = "/imagenes/David.jpg";
-		      // TODO dcabanillas: Crear una clase estatica que maneje los
-		      // llamados
-		      // en vez de retornar un valor, llamar a una funcion que retorne
-		      // dicho valor
-		      // ejemplo: ConstantesFlowPage.goPaginaTutorHome();
-				return ConstantesFlowPage.GO_PAGINA_TUTOR_HOME;
-			}
-			return null;
-		}
-		return null;
-	}
+  public void setTutorLoginHandler(final LoginHandler tutorLoginHandler) {
+    this.tutorLoginHandler = tutorLoginHandler;
+  }
 
-	/**
-	 * Logueo sin BD
-	 * TODO dcabanillas: (crear mock)
-	 */
-	private String loguearSinBD() {
-	    if (password.equals("123")) {
-	        sesionActiva = true;
-	        nombre = "David Cabanillas Murrugarra";
-	        mail = "dmoises.cm@gmail.com";
-	        cargo = "Software Engineer I en Avantica Technologies";
-	        interes = "Interesado en JAVA, Business Intelligence y Master in Business Administration";
-	        rutaImagen = "/imagenes/David.jpg";
-	        // TODO dcabanillas: Crear una clase estatica que maneje los
-	        // llamados
-	        // en vez de retornar un valor, llamar a una funcion que retorne
-	        // dicho valor
-	        // ejemplo: ConstantesFlowPage.goPaginaTutorHome();
-	        return ConstantesFlowPage.GO_PAGINA_TUTOR_HOME;
-	      }
-	      return null;
-	}
+  /**
+   * Logueo con BD
+   */
+  private String loguearConBD() {
+    // Implementacion del logueo
+    tutorLoginHandler.setUsuario(usuario);
+    // Encriptar Contraseña
+    // password = DigestUtils.md5Hex(password);
+    tutorLoginHandler.setPassword(password);
+    final LoginResponse response = tutorLoginHandler.ejecutar();
+    if (response != null) {
+      final Usuario tutor = response.getUsuario();
+      if (tutor != null) {
+        sesionActiva = true;
+        nombre = tutor.getNombre();
+        mail = tutor.getCorreo();
+        cargo = tutor.getCargo();
+        interes = tutor.getInteres();
+        rutaImagen = "/imagenes/David.jpg";
+        // TODO dcabanillas: Crear una clase estatica que maneje los
+        // llamados
+        // en vez de retornar un valor, llamar a una funcion que retorne
+        // dicho valor
+        // ejemplo: ConstantesFlowPage.goPaginaTutorHome();
+        return ConstantesFlowPage.GO_PAGINA_TUTOR_HOME;
+      }
+      return null;
+    }
+    return null;
+  }
+
+  /**
+   * Logueo sin BD TODO dcabanillas: (crear mock)
+   */
+  private String loguearSinBD() {
+    if (password.equals("123")) {
+      sesionActiva = true;
+      nombre = "David Cabanillas Murrugarra";
+      mail = "dmoises.cm@gmail.com";
+      cargo = "Software Engineer I en Avantica Technologies";
+      interes = "Interesado en JAVA, Business Intelligence y Master in Business Administration";
+      rutaImagen = "/imagenes/David.jpg";
+      // TODO dcabanillas: Crear una clase estatica que maneje los
+      // llamados
+      // en vez de retornar un valor, llamar a una funcion que retorne
+      // dicho valor
+      // ejemplo: ConstantesFlowPage.goPaginaTutorHome();
+      return ConstantesFlowPage.GO_PAGINA_TUTOR_HOME;
+    }
+    return null;
+  }
 }
