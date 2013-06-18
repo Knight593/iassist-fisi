@@ -1,12 +1,17 @@
-window.onload = redimensionar;
+window.onload = function(){
+	if(screen.availHeight == window.height){
+		redimensionar();
+	}
+};
 //window.onresize = redimensionar;
 
 function redimensionar() {
 	var altoVentana = obtenerAltoVentana() - 85;
 	var alto = (altoVentana / 2) - 28;
 	document.getElementById('panelDerecho').style.height = altoVentana + 'px';
-	document.getElementById('panelEnlacesInteres').style.height = alto + 'px';
-	document.getElementById('panelEnlacesRelacionados').style.height = alto + 'px';
+	//TODO verificar
+	//document.getElementById('panelEnlacesInteres').style.height = alto + 'px';
+	//document.getElementById('panelEnlacesRelacionados').style.height = alto + 'px';
 };
 
 function obtenerAltoVentana() {

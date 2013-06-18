@@ -19,13 +19,11 @@
 .panelDerecho {
   float: right;
   width: 270px;
-  background-color: #FFE286;
   position: fixed;
   top: 65px;
   right: 10px;
   min-height: 400px;;
   overflow: hidden;
-  padding: 5px;
 }
 
 .panelCentral {
@@ -36,6 +34,7 @@
 /* Estilos panel lateral */
 .subPanelEnlaces {
   margin-top: 10px;
+  width: 100%;
 }
 
 .tituloPanel {
@@ -47,13 +46,13 @@
   font-size: 18px;
 }
 
-.panelScroll {
-  height: 360px;
-  overflow: scroll;
-}
-
 .panelEnlaces {
-  
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  height: 360px;
+  border: 4px solid blue;
+  margin-top:5px; 
 }
 
 .enlaceRelacionado {
@@ -82,14 +81,6 @@
   font-family: tahoma;
   height: 100%;
   overflow: hidden;
-}
-
-.margenAzul {
-  border: 1px solid blue;
-}
-
-.margenRojo {
-  border: 1px solid red;
 }
 
 /* Estilos Pagina Principal */
