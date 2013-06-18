@@ -1,17 +1,17 @@
 window.onload = function(){
-	if(screen.availHeight == window.height){
-		redimensionar();
-	}
+//	if(screen.availHeight == window.height){
+	redimensionar();
+//	}
 };
 //window.onresize = redimensionar;
 
 function redimensionar() {
-	var altoVentana = obtenerAltoVentana() - 85;
-	var alto = (altoVentana / 2) - 28;
+	var altoVentana = obtenerAltoVentana() - 67;
+	var alto = (altoVentana / 2) - 55;
 	document.getElementById('panelDerecho').style.height = altoVentana + 'px';
 	//TODO verificar
-	//document.getElementById('panelEnlacesInteres').style.height = alto + 'px';
-	//document.getElementById('panelEnlacesRelacionados').style.height = alto + 'px';
+	document.getElementById('panelEnlacesInteres').style.height = alto + 'px';
+	document.getElementById('panelEnlacesRelacionados').style.height = alto + 'px';
 };
 
 function obtenerAltoVentana() {
