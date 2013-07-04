@@ -5,9 +5,9 @@
 	<h:form id="usuarioForm">
 		<p:accordionPanel id="acordionPanel" activeIndex="0" multiple="true"
 			styleClass="panelAcordionHangout">
-			<p:tab title="Último Software Desarrollado" disabled="true" >
+			<p:tab title="Última Sesion Desarrollada" disabled="true" >
                 <h:outputLink id="outLinkHangout"  value="#{hangOutBean.rutaHangOut}"
-                    styleClass="botonIngresarHangout" target="_blank">Únete al Proyecto</h:outputLink>
+                    styleClass="botonIngresarHangout" target="_blank">Únete a la Clase</h:outputLink>
 				<p:outputLabel id="outTitulo" value="#{hangOutBean.titulo}"
 					styleClass="tituloHangout" />
 				<br/><br/>
@@ -17,7 +17,7 @@
 						rendered="#{hangOutBean.existeHangOut}" />
 				</div>
 			</p:tab>
-			<p:tab title="Descripción del Software Desarrollado">
+			<p:tab title="Descripción de la Sesion">
 				<h:panelGrid columns="2" cellpadding="0">
 					<h:panelGrid columns="2" cellpadding="0">
 						<h:panelGrid columns="2">
