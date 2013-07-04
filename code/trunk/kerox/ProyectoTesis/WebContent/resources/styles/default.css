@@ -14,21 +14,24 @@
   color: red;
   margin-top: 15px;
   margin-right: 290px;
+  margin-left: 10px;
 }
 
 .panelDerecho {
   float: right;
   width: 270px;
-  position: fixed;
-  top: 55px;
-  right: 10px;
+  /*position: fixed;*/
+  /*top: 55px;*/
+  /*right: 10px;*/
   min-height: 400px;;
   overflow: hidden;
+  margin-right: 10px;
 }
 
 .panelCentral {
-  margin-right: 290px;
-  background-color: #FFE286;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #FCEE66;
 }
 
 /* Estilos panel lateral */
@@ -38,7 +41,7 @@
 }
 
 .tituloPanel {
-  background-color: blue;
+  background-color: #257295;
   color: white;
   padding: 5px;
   font-family: tahoma;
@@ -51,8 +54,8 @@
   padding: 0;
   margin: 0;
   height: 360px;
-  border: 4px solid blue;
-  margin-top:5px; 
+  border: 4px solid #257595;
+  margin-top: 5px;
 }
 
 .enlaceRelacionado {
@@ -85,20 +88,23 @@
 
 /* Estilos Pagina Principal */
 body {
-  background-color: #FFF4C9 !important;
+  background-color: #E6E6E6 !important;
   margin: 0;
+  min-width: 1024px;
+  min-height: 768px;
 }
 
 /* Estilos Menu Bar Header */
 .menuBarHeader {
+  background-color: #56A6DB;
   height: 44px;
-  background-image: url("../images/fondo_header_azul.png");
+  /*background-image: url("../images/fondo_header_azul.png");*/
   border: solid 0;
 }
 
 /* Estilos Panel Footer */
 .panelFooterDerechosReservados {
-  background-color: #B2B2B2;
+  background-color: #257295;
   border-top: 3px solid;
   text-align: right;
 }
@@ -147,4 +153,43 @@ body {
   color: blue !important;
   font-size: 13px;
   text-align: right;
+}
+
+.tituloSesion {
+  height: 40px;
+  overflow: hidden;
+}
+
+.videoSesion {
+  background-color: #F2F2F2;
+  margin-top: 10px;
+  min-height: 390px
+  padding: 10px;
+}
+
+.informacionClase {
+  margin-top: 20px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.informacionTutor {
+  width: 45%;
+  float: left;
+}
+
+.informacionSesion {
+  width: 45%;
+  float: right;
+  display: inline;
+}
+
+.proximasSesiones{
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.tituloInformativo {
+    font-weight: bold;
+    margin-bottom: 10px;
 }

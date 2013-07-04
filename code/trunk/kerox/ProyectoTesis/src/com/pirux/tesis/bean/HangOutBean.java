@@ -26,7 +26,7 @@ public class HangOutBean {
   private String interesesTutor;
   // Detalles del video
   private String rutaHangOut;
-  private String ruta;
+  private String ruta = "//resources//images//screen.png";
   private Media usuarioVideo;
 
   public HangOutBean() {
