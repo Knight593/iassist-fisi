@@ -6,7 +6,7 @@ public class Comentario {
   private String tipoAutor;
   private String autor;
   private String mensaje;
-  private Date Hora;
+  private Date hora;
 
   public String getAutor() {
     return autor;
@@ -32,11 +32,11 @@ public class Comentario {
   }
 
   public Date getHora() {
-    return Hora;
+    return hora;
   }
 
   public void setHora(final Date Hora) {
-    this.Hora = Hora;
+    this.hora = Hora;
   }
 
   public String getTipoAutor() {

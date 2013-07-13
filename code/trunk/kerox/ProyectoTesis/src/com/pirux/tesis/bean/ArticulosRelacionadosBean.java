@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
 
 import org.primefaces.push.PushContext;
 import org.primefaces.push.PushContextFactory;
@@ -14,6 +13,8 @@ import com.pirux.tesis.model.ArticuloRealcionado;
 
 @ManagedBean
 @ApplicationScoped
+// Evaluar de que sea session scope
+// Esta informacion quedara registrada a nivel de BD
 public class ArticulosRelacionadosBean {
 
   private List<ArticuloRealcionado> articulosRelacionados;
@@ -57,13 +58,9 @@ public class ArticulosRelacionadosBean {
     articulo.setUrlPost(urlAgregar);
     articulo.setRutaImagen(imagenAgregar);
     articulosRelacionados.add(0, articulo);
-    final FacesContext facesContext = FacesContext.getCurrentInstance();
-    final TutorSesionBean sesionTutor = facesContext.getApplication()
-        .evaluateExpressionGet(facesContext, "#{tutorSesionBean}",
-            TutorSesionBean.class);
     final PushContext pushContext = PushContextFactory.getDefault()
         .getPushContext();
-    pushContext.push("/LinkRelacionado", null);
+    pushContext.push("/LinkRelacionadoCanal", null);
     this.tituloAgregar = "";
     this.imagenAgregar = "";
     this.urlAgregar = "";

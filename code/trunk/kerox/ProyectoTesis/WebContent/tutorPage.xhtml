@@ -5,13 +5,13 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>
     <title>Tutor - Panel de Control</title>
-    <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/resources/styles/destilos.css" />
+    <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/resources/styles/default.css" />
 </h:head>
 <h:body>
     <p:outputLabel value="Error - Acceso Restringido." rendered="#{!tutorSesionBean.sesionActiva}" styleClass="mensajeErrorLogin"></p:outputLabel>
     <p:panel id="panelTabPadre" rendered="#{tutorSesionBean.sesionActiva}" styleClass="panelTabPadre">
 	    <p:tabView id="tabsPanel" styleClass="panelTabs">
-	        <p:tab id="tabInformacion" title="Información del tutor" titleStyleClass="panelInformacion">
+	        <p:tab id="tabInformacion" title="Información del Tutor" titleStyleClass="panelInformacion">
 	            <p:outputLabel id="tituloTabInformacion" value="Información del Tutor" styleClass="tituloPanelInformacion"></p:outputLabel>
 	            <br/><br/>
 	            <h:panelGrid id="panelTabInformacion" border="0" columns="2" styleClass="panelInformacion">
@@ -27,7 +27,7 @@
 	               <br/><br/>
 	               <h:panelGrid id="panelTabHangout" border="0" columns="2" styleClass="panelTabsTutorHome">
                        <p:outputLabel value="Link del HangOut" styleClass="descripcionPanelTutorHome"></p:outputLabel>
-                       <p:inputText value="#{hangOutBean.rutaHangOut}" size="100"></p:inputText>
+                       <p:inputText  value="#{hangOutBean.rutaHangOut}" size="100"></p:inputText>
 	                   <p:outputLabel value="Link de YouTube:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
 	                   <p:inputText value="#{hangOutBean.ruta}" size="100"></p:inputText>
 	                   <p:outputLabel value="Título del HangOut:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
@@ -42,7 +42,7 @@
 	               </h:panelGrid>
 	           </h:form>
 	        </p:tab>
-          <p:tab id="tabLinksRelacionados" title="agregar links de interes">
+          <p:tab id="tabLinksRelacionados" title="Agregar Links de Interés">
             <h:form>
                 <h:panelGrid id="panelTabHangout" border="0" columns="2" styleClass="panelTabsTutorHome">
                      <p:outputLabel value="Titulo del Articulo:" styleClass="descripcionPanelTutorHome"></p:outputLabel>
@@ -50,8 +50,8 @@
                      <p:outputLabel value="Imagen de referencia" styleClass="descripcionPanelTutorHome"></p:outputLabel>
                        <p:inputText value="#{articulosRelacionadosBean.imagenAgregar}" size="40"></p:inputText>
                      <p:outputLabel value="URL del Articulo" styleClass="descripcionPanelTutorHome"></p:outputLabel>
-                       <p:inputText value="#{articulosRelacionadosBean.urlAgregar}" size="20"></p:inputText>
-                       <h:commandButton value="Agregar Link" actionListener="#{articulosRelacionadosBean.agregarArticuloRelacionado}"></h:commandButton>
+                     <p:inputText value="#{articulosRelacionadosBean.urlAgregar}" size="20"></p:inputText>
+                     <h:commandButton value="Agregar Link" actionListener="#{articulosRelacionadosBean.agregarArticuloRelacionado}"></h:commandButton>
                  </h:panelGrid>
             </h:form>
           </p:tab>

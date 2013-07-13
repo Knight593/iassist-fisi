@@ -14,6 +14,7 @@ import org.primefaces.push.PushContextFactory;
 @ManagedBean
 @ApplicationScoped
 public class HangOutBean {
+
   // Detalles de la sesion
   private String titulo;
   private String nivel;
@@ -133,13 +134,11 @@ public class HangOutBean {
   }
 
   public synchronized void actualizarVideo() {
-    final String datos =
-            "<iframe width='780' height='439' frameborder='0' allowfullscreen='1'  src='" + ruta
-                    + "'></iframe>";
+    final String datos = formarComponenteHtmlDelVideo();
+
     final FacesContext context = FacesContext.getCurrentInstance();
-    final TutorSesionBean tutorBean =
-            context.getApplication().evaluateExpressionGet(context, "#{tutorSesionBean}",
-                    TutorSesionBean.class);
+    final TutorSesionBean tutorBean = context.getApplication().evaluateExpressionGet(context,
+        "#{tutorSesionBean}", TutorSesionBean.class);
     nombreTutor = tutorBean.getNombre();
     cargoTutor = tutorBean.getCargo();
     interesesTutor = tutorBean.getInteres();
@@ -149,5 +148,10 @@ public class HangOutBean {
     }
     final PushContext pushContext = PushContextFactory.getDefault().getPushContext();
     pushContext.push("/videoCanal", datos);
+  }
+
+  private String formarComponenteHtmlDelVideo() {
+    return "<iframe width='780' height='439' frameborder='0' allowfullscreen='1'  src='" + ruta
+        + "'></iframe>";
   }
 }
