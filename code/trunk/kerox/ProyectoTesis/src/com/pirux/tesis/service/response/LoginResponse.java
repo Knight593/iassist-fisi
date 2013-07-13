@@ -1,19 +1,19 @@
 package com.pirux.tesis.service.response;
 
-import com.pirux.tesis.model.Usuario;
+import com.pirux.tesis.model.Tutor;
 
 /**
  * Modelo de la data de respuesta para el logueo del tutor
  */
 public class LoginResponse {
-	private Usuario usuario;
+	private Tutor tutor;
 
-	public Usuario getUsuario() {
-		return usuario;
+	public Tutor getUsuario() {
+		return tutor;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(Tutor tutor) {
+		this.tutor = tutor;
 	}
 	
 	

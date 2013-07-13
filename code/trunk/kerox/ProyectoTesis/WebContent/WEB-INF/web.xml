@@ -4,6 +4,10 @@
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
   id="WebApp_ID" version="3.0">
   <display-name>ProyectoTesis</display-name>
+  <context-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/applicationContext*.xml</param-value>
+  </context-param>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener
     </listener-class>
@@ -13,9 +17,6 @@
       org.springframework.web.context.request.RequestContextListener
     </listener-class>
   </listener>
-  <welcome-file-list>
-    <welcome-file>/views/Default.xhtml</welcome-file>
-  </welcome-file-list>
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -23,17 +24,12 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
-    <url-pattern>/faces/*</url-pattern>
-    <url-pattern>*.xhtml</url-pattern>
+    <url-pattern>*.pip</url-pattern>
   </servlet-mapping>
   <context-param>
     <param-name>primefaces.THEME</param-name>
     <param-value>delta</param-value>
   </context-param>
-  <session-config>
-    <session-timeout>30</session-timeout>
-  </session-config>
-  
   <servlet>
     <servlet-name>Push Servlet</servlet-name>
     <servlet-class>org.primefaces.push.PushServlet</servlet-class>
@@ -59,4 +55,10 @@
     <servlet-name>Push Servlet</servlet-name>
     <url-pattern>/primepush/*</url-pattern>
   </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>/views/home.pip</welcome-file>
+  </welcome-file-list>
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
 </web-app>

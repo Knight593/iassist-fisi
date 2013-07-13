@@ -3,7 +3,7 @@ package com.pirux.tesis.model;
 /**
  * Entidad del tutor
  */
-public class Usuario {
+public class Tutor {
 
 	private Integer id;
 	private String nombre;

@@ -8,7 +8,7 @@
     <property name="hibernate.format_sql">true</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     
-    <mapping resource="/com/pirux/tesis/model/mapping/Usuario.hbm.xml" />
+    <mapping resource="/com/pirux/tesis/model/mapping/Tutor.hbm.xml" />
   </session-factory>
 </hibernate-configuration>
 
