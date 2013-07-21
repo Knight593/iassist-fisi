@@ -12,4 +12,8 @@
 	</bean>
     <bean id="hangOutBean" class="com.pirux.tesis.bean.HangOutBean"
         scope="application" />
+    <bean id="articulosRelacionadosBean" class="com.pirux.tesis.bean.ArticulosRelacionadosBean"
+        scope="application">
+		<constructor-arg index="0" ref="articuloRelacionadoHandler" />
+    </bean>
 </beans>

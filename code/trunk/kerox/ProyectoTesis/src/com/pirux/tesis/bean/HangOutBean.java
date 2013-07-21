@@ -27,7 +27,8 @@ public class HangOutBean {
   private String interesesTutor;
   // Detalles del video
   private String rutaHangOut;
-  private String ruta = "//resources//images//screen.png";
+  // TODO dcabanillas, mover a un ConstantesRecursos
+  private String ruta = "//resources//images//kerox_completo.png";
   private Media usuarioVideo;
 
   public HangOutBean() {
@@ -151,7 +152,8 @@ public class HangOutBean {
   }
 
   private String formarComponenteHtmlDelVideo() {
-    return "<iframe width='780' height='439' frameborder='0' allowfullscreen='1'  src='" + ruta
+    // TODO dcabanillas probar con 640x390
+    return "<iframe width='900' height='550' frameborder='0' allowfullscreen='1'  src='" + ruta
         + "'></iframe>";
   }
 }

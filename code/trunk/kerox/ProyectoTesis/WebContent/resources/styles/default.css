@@ -20,14 +20,12 @@ root {
 
 .footer {
   color: red;
-  margin-top: 15px;
-  margin-right: 290px;
-  margin-left: 10px;
+  margin-top: 5px;
 }
 
 .panelDerecho {
   float: right;
-  width: 270px;
+  width: 240px;
   /*position: fixed;*/
   /*top: 55px;*/
   /*right: 10px;*/
@@ -39,7 +37,8 @@ root {
 .panelCentral {
   margin-right: 10px;
   margin-left: 10px;
-  background-color: #FCEE66;
+  background-color: white;
+  border: 1px solid blue;
 }
 
 /* Estilos panel lateral */
@@ -91,6 +90,7 @@ root {
 .contenidoEnlace {
   font-family: tahoma;
   height: 100%;
+  width: 160px;
   overflow: hidden;
 }
 
@@ -305,6 +305,18 @@ body {
 }
 
 /* Estilos panel video hangout */
+.tituloPresentacionHangout {
+	display: inline-block;
+	text-decoration: none;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.panelDatosTutor {
+	width: 100%;
+}
+
 .tituloHangout {
   color: #4E7DFF;
   display: inline-block;
@@ -322,10 +334,11 @@ body {
   border: 1px solid #168DD9;
   background-color: #27ABFF;
   color: white !important;
-  font-size: 15px !important;
+  font-size: 12px !important;
   font-weight: bold;
-  width: 150px;
-  padding: 10px;
+  width: 110px;
+  height: 15px;
+  padding: 3px;
   float: right;
 }
 
@@ -367,6 +380,7 @@ body {
   margin: 0 auto;
   text-align: center;
   margin-top: 20px;
+  width: 100%;
 }
 
 .panelAcordionHangout {

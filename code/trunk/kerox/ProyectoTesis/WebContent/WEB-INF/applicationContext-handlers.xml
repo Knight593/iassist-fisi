@@ -9,4 +9,7 @@
     <bean id="tutorLoginHandler" class="com.pirux.tesis.handler.LoginHandler">
         <constructor-arg index="0" ref="loginTutorServiceMock" />
     </bean>
+    <bean id="articuloRelacionadoHandler" class="com.pirux.tesis.handler.ArticuloRelacionadoHandler">
+        <constructor-arg index="0" ref="articuloRelacionadoServiceMock" />
+    </bean>
 </beans>
