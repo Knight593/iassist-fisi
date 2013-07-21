@@ -3,79 +3,73 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 	<h:form id="usuarioForm">
-		<p:accordionPanel id="acordionPanel" activeIndex="0" multiple="true"
-			styleClass="panelAcordionHangout">
-			<p:tab title="Última Sesion Desarrollada" disabled="true" >
-                <h:outputLink id="outLinkHangout"  value="#{hangOutBean.rutaHangOut}"
-                    styleClass="botonIngresarHangout" target="_blank">Únete a la Clase</h:outputLink>
-				<p:outputLabel id="outTitulo" value="#{hangOutBean.titulo}"
-					styleClass="tituloHangout" />
-				<br/><br/>
-				<div id="displayVideo" class="displayVideoHangout">
-					<p:media id="usuarioVideo" value="#{hangOutBean.ruta}" width="780"
-						height="439" player="flash"
-						rendered="#{hangOutBean.existeHangOut}" />
-				</div>
-			</p:tab>
-			<p:tab title="Descripción de la Sesion">
-				<h:panelGrid columns="2" cellpadding="0">
-					<h:panelGrid columns="2" cellpadding="0">
-						<h:panelGrid columns="2">
-							<p:outputLabel value="Nivel:"
-								styleClass="subtituloDescripcionHangout"></p:outputLabel>
-							<p:outputLabel id="outNivel" value="#{hangOutBean.nivel}"
-								styleClass="valorDescripcionHangout"></p:outputLabel>
-							<p:outputLabel value="Tecnologias:"
-								styleClass="subtituloDescripcionHangout"></p:outputLabel>
-							<p:outputLabel id="outTecnologias"
-								value="#{hangOutBean.tecnologias}"
-								styleClass="valorDescripcionHangout"></p:outputLabel>
-							<p:outputLabel value="Descripcion:"
-								styleClass="subtituloDescripcionHangout"></p:outputLabel>
-							<p:outputLabel id="outDescripcion"
-								value="#{hangOutBean.descripcion}"
-								styleClass="valorDescripcionHangout"></p:outputLabel>
-						</h:panelGrid>
-						<h:panelGrid columns="2">
-							<h:panelGrid>
-								<p:graphicImage value="/resources/images/moderador_default.png"
-									styleClass="fotoTutorHangout"></p:graphicImage>
-							</h:panelGrid>
-							<h:panelGrid>
-								<p:outputLabel id="outNombreTutor"
-									value="#{hangOutBean.nombreTutor}"
-									styleClass="detalleTutorHangout"></p:outputLabel>
-								<p:outputLabel id="outCargoTutor"
-									value="#{hangOutBean.cargoTutor}"
-									styleClass="detalleTutorHangout"></p:outputLabel>
-								<p:outputLabel id="outInteresTutor"
-									value="#{hangOutBean.interesesTutor}"
-									styleClass="detalleTutorHangout"></p:outputLabel>
-							</h:panelGrid>
-						</h:panelGrid>
+		<div>
+			<h:outputLabel value="Último Proyecto Desarrollado"
+				styleClass="tituloPresentacionHangout"></h:outputLabel>
+			<h:outputLink id="outLinkHangout" value="#{hangOutBean.rutaHangOut}"
+				styleClass="botonIngresarHangout" target="_blank">Únete a la Clase</h:outputLink>
+			<br />
+			<p:outputLabel id="outTitulo" value="#{hangOutBean.titulo}"
+				styleClass="tituloHangout" />
+			<br />
+			<!--                 CONTROLAR EL ANCHO PARA LAS DIFERENTES RESOLUCIONES -->
+			<div id="displayVideo" class="displayVideoHangout">
+				<p:media id="usuarioVideo" value="#{hangOutBean.ruta}" width="780"
+					height="439" player="flash" rendered="#{hangOutBean.existeHangOut}" />
+			</div>
+		</div>
+		<br />
+		<div>
+			<h:outputLabel value="Descripción del Proyecto"
+				styleClass="tituloPresentacionHangout"></h:outputLabel>
+			<h:panelGrid columns="2" styleClass="panelDatosTutor">
+				<h:panelGrid columns="2">
+					<p:outputLabel value="Nivel:"
+						styleClass="subtituloDescripcionHangout"></p:outputLabel>
+					<p:outputLabel id="outNivel" value="#{hangOutBean.nivel}"
+						styleClass="valorDescripcionHangout"></p:outputLabel>
+					<p:outputLabel value="Tecnologias:"
+						styleClass="subtituloDescripcionHangout"></p:outputLabel>
+					<p:outputLabel id="outTecnologias"
+						value="#{hangOutBean.tecnologias}"
+						styleClass="valorDescripcionHangout"></p:outputLabel>
+					<p:outputLabel value="Descripcion:"
+						styleClass="subtituloDescripcionHangout"></p:outputLabel>
+					<p:outputLabel id="outDescripcion"
+						value="#{hangOutBean.descripcion}"
+						styleClass="valorDescripcionHangout"></p:outputLabel>
+				</h:panelGrid>
+				<h:panelGrid columns="2">
+					<h:panelGrid>
+						<p:graphicImage value="/resources/images/moderador_default.png"
+							styleClass="fotoTutorHangout"></p:graphicImage>
+					</h:panelGrid>
+					<h:panelGrid>
+						<p:outputLabel id="outNombreTutor"
+							value="#{hangOutBean.nombreTutor}"
+							styleClass="detalleTutorHangout"></p:outputLabel>
+						<p:outputLabel id="outCargoTutor"
+							value="#{hangOutBean.cargoTutor}"
+							styleClass="detalleTutorHangout"></p:outputLabel>
+						<p:outputLabel id="outInteresTutor"
+							value="#{hangOutBean.interesesTutor}"
+							styleClass="detalleTutorHangout"></p:outputLabel>
 					</h:panelGrid>
 				</h:panelGrid>
-			</p:tab>
-		</p:accordionPanel>
+			</h:panelGrid>
+		</div>
 	</h:form>
 	<!--     Codigo Agregado para el Push del HangOut -->
 	<p:socket onMessage="handleMessage" channel="/videoCanal">
-		<p:ajax event="message" update="usuarioForm:acordionPanel:outTitulo" />
-		<p:ajax event="message" update="usuarioForm:acordionPanel:outNivel" />
-		<p:ajax event="message"
-			update="usuarioForm:acordionPanel:outTecnologias" />
-		<p:ajax event="message"
-			update="usuarioForm:acordionPanel:outDescripcion" />
-		<p:ajax event="message"
-			update="usuarioForm:acordionPanel:outNombreTutor" />
-		<p:ajax event="message"
-			update="usuarioForm:acordionPanel:outCargoTutor" />
-		<p:ajax event="message"
-			update="usuarioForm:acordionPanel:outInteresTutor" />
-		<p:ajax event="message"
-			update="usuarioForm:acordionPanel:outInteresTutor" />
-		<p:ajax event="message"
-            update="usuarioForm:acordionPanel:outLinkHangout" />
+		<p:ajax event="message" update="usuarioForm:outTitulo" />
+		<p:ajax event="message" update="usuarioForm:outNivel" />
+		<p:ajax event="message" update="usuarioForm:outTecnologias" />
+		<p:ajax event="message" update="usuarioForm:outDescripcion" />
+		<p:ajax event="message" update="usuarioForm:outNombreTutor" />
+		<p:ajax event="message" update="usuarioForm:outCargoTutor" />
+		<p:ajax event="message" update="usuarioForm:outInteresTutor" />
+		<p:ajax event="message" update="usuarioForm:outInteresTutor" />
+		<p:ajax event="message" update="usuarioForm:outLinkHangout" />
 	</p:socket>
 	<script type='text/javascript'>
 		function handleMessage(data) {

@@ -10,4 +10,7 @@
     <bean id="loginTutorService" class="com.pirux.tesis.service.impl.LoginServiceImpl">
         <property name="tutorDAO" ref="tutorDAO"></property>
     </bean>
+    <bean id="articuloRelacionadoServiceMock" class="com.pirux.tesis.service.mock.ArticuloRelacionadoServiceMock" />
+    <bean id="articuloRelacionadoService" class="com.pirux.tesis.service.impl.ArticuloRelacionadoServiceImpl">
+    </bean>
 </beans>
