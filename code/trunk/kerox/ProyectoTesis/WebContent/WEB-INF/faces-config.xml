@@ -14,4 +14,22 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<display-name>views/home.xhtml</display-name>
+		<from-view-id>/views/home.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>goProyectosRealizados</from-outcome>
+			<to-view-id>/views/uiCuerpoProyectosRealizados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>views/uiCuerpoProyectosRealizados.xhtml</display-name>
+		<from-view-id>/views/uiCuerpoProyectosRealizados.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>goHome</from-outcome>
+			<to-view-id>/views/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

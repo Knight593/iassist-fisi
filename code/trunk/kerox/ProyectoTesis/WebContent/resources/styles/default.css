@@ -118,18 +118,20 @@ body {
 }
 
 .linksFooter {
+  display: inline-block;
+  border-width:0px;
+  border-color: #000000;
+  border-style: solid;
+  background: #257295;
   text-decoration: none;
   text-align: left;
-  color: black;
+  color: #56A6DB;
   margin-left: 20px;
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 .linksFooter:hover {
-  text-decoration: none;
-  text-align: left;
   color: blue;
-  margin-left: 20px;
   font-weight: bold;
 }
 

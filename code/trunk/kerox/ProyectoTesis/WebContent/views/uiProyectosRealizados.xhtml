@@ -1,0 +1,14 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+    <h:form>
+        <h3>Proyectos Realizados Anteriormente</h3>
+        <p:dataGrid columns="1" rows="1" paginator="true" var="taller" value="#{tallerVirtualBean.talleresVirtuales}">
+            <p:outputPanel>
+                <p:outputLabel value="Tutor:"></p:outputLabel>
+                <p:outputLabel value="#{taller.nombreTutor}"></p:outputLabel>
+            </p:outputPanel>
+        </p:dataGrid>
+    </h:form>
+</ui:composition>
