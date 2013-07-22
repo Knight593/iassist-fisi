@@ -80,7 +80,7 @@ public class HangOutBean {
   }
 
   public boolean isExisteHangOut() {
-    if (ruta != null && !ruta.equals("")) {
+    if (rutaHangOut != null && !rutaHangOut.equals("")) {
       return true;
     }
     return false;
