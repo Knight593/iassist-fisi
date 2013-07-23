@@ -1,5 +1,7 @@
 package com.pirux.tesis.model;
 
+import java.util.Date;
+
 /**
  * Entidad que envolvera los datos de un hangout grabado
  * 
@@ -14,6 +16,15 @@ public class TallerVirtual {
   private String tecnologias;
   private String descripcion;
   private String nombreTutor;
+  private Date fecha;
+
+  public Date getFecha() {
+    return fecha;
+  }
+
+  public void setFecha(final Date fecha) {
+    this.fecha = fecha;
+  }
 
   public String getNombreTutor() {
     return nombreTutor;
