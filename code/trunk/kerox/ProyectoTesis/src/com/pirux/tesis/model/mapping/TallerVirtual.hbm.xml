@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.pirux.tesis.model.TallerVirtual" table="TALLER_VIRTUAL" >
+        <id name="id" column="ID">
+            <generator class="native"></generator>
+        </id>
+<!--         TODO dcabanillas: Crear el objeto tutor -->
+<!--         <component name="tutor"></component> -->
+	    <property name="nivel" column="NIVEL"/>
+	    <property name="titulo" column="TITULO"/>
+	    <property name="descripcion" column="DESCRIPCION"/>
+	    <property name="tecnologias" column="TECNOLOGIAS"/>
+	    <property name="nombreTutor" column="NOMBRE_TUTOR"/>
+	    <property name="fecha" column="FECHA"/>
+	    <property name="rutaLinkEmbebido" column="RUTA_EMEBIDA"/>
+	    <property name="rutaLinkYouTube" column="RUTA_YOUTUBE"/>
+    </class>
+</hibernate-mapping>

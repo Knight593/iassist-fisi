@@ -9,6 +9,7 @@ import java.util.Date;
  */
 public class TallerVirtual {
 
+  private Integer id;
   private String rutaLinkYouTube;
   private String rutaLinkEmbebido;
   private String titulo;
@@ -17,6 +18,14 @@ public class TallerVirtual {
   private String descripcion;
   private String nombreTutor;
   private Date fecha;
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(final Integer id) {
+    this.id = id;
+  }
 
   public Date getFecha() {
     return fecha;

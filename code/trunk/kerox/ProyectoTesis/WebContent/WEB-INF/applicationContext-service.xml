@@ -13,4 +13,8 @@
     <bean id="articuloRelacionadoServiceMock" class="com.pirux.tesis.service.mock.ArticuloRelacionadoServiceMock" />
     <bean id="articuloRelacionadoService" class="com.pirux.tesis.service.impl.ArticuloRelacionadoServiceImpl">
     </bean>
+    <bean id="tallerVirtualServiceMock" class="com.pirux.tesis.service.mock.TallerVirtualServiceMock" />
+    <bean id="tallerVirtualService" class="com.pirux.tesis.service.impl.TallerVirtualServiceImpl">
+        <property name="tallerVirtualDAO" ref="tallerVirtualDAO"/>
+    </bean>
 </beans>

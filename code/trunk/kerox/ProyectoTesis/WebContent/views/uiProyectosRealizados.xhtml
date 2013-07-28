@@ -4,18 +4,28 @@
     xmlns:f="http://java.sun.com/jsf/core"
     xmlns:p="http://primefaces.org/ui">
     <h:form>
-        <h3>Proyectos Realizados Anteriormente</h3>
-        <p:dataGrid columns="1" rows="2" paginator="true" var="taller" value="#{tallerVirtualBean.talleresVirtuales}">
-            <p:panelGrid columns="2">
-                <h:outputText value="#{taller.fecha}">
-                    <f:convertDateTime pattern="dd-MM-yy"></f:convertDateTime>
-                </h:outputText>
-                <p:outputLabel value="#{taller.titulo}"></p:outputLabel>
-                <p:outputLabel value="Tecnología:"></p:outputLabel>
-                <p:outputLabel value="#{taller.tecnologias}"></p:outputLabel>
-                <p:outputLabel value="Descripción:"></p:outputLabel>
-                <p:outputLabel value="#{taller.descripcion}"></p:outputLabel>
-            </p:panelGrid>
+        <h3 class="tituloPanelProyectosRealizados">Proyectos Realizados Anteriormente</h3>
+        <p:dataGrid columns="1" rows="5" paginator="true" var="taller" styleClass="panelProyectoRealizado"
+                    value="#{tallerVirtualBean.talleresVirtuales}">
+            <h:panelGroup>
+	            <h:panelGrid columns="1" styleClass="contenedorProyectoRealizadoIzquierdo">
+	                <h:outputText value="#{taller.fecha}" styleClass="fechaProyectoRealizado">
+	                    <f:convertDateTime pattern="dd-MM-yy"></f:convertDateTime>
+	                </h:outputText>
+	                <p:outputLabel value="Tecnología:" styleClass="labelProyectoRealizado"></p:outputLabel>
+	                <p:outputLabel value="Descripción:" styleClass="labelProyectoRealizado"></p:outputLabel>
+	                <br />
+	            </h:panelGrid>
+		            <h:panelGrid columns="1" styleClass="contenedorProyectoRealizadoDerecho">
+		            <h:outputLink value="#{taller.rutaLinkYouTube}" target="_blank" styleClass="tituloProyectoRealizado">
+		              <p:outputLabel value="#{taller.titulo}" styleClass="tituloProyectoRealizado"></p:outputLabel>
+		            </h:outputLink>
+		            <p:outputLabel value="#{taller.tecnologias}" styleClass="valorProyectoRealizado"></p:outputLabel>
+		            <p:outputLabel value="#{taller.descripcion}" styleClass="valorProyectoRealizado"></p:outputLabel>
+		            <br />
+	            </h:panelGrid>
+            </h:panelGroup>
+            
         </p:dataGrid>
     </h:form>
 </ui:composition>

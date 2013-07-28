@@ -389,3 +389,61 @@ body {
   width: 100%;
   border: 1px solid white;
 }
+
+/* Estilos del panel de talleres realizados */
+.tituloPanelProyectosRealizados {
+  color: #257295;
+}
+
+.panelProyectoRealizado {
+  
+}
+
+.contenedorProyectoRealizadoIzquierdo {
+  display: inline-table;
+  float: left;
+  width: 15%;
+}
+
+.contenedorProyectoRealizadoDerecho {
+  display: inline-table;
+  float: left;
+  width: 85%;
+}
+
+.fechaProyectoRealizado {
+  color: #257295;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 1px solid red;
+  float: left;
+  width: 100%;
+}
+
+.tituloProyectoRealizado {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  border-bottom: 1px solid red;
+  float: left;
+  width: 100%;
+}
+
+.tituloProyectoRealizado:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.labelProyectoRealizado {
+  color: #257295;
+  font-size: 15px;
+  text-align: left;
+}
+
+.valorProyectoRealizado {
+  color: black;
+  font-size: 15px;
+  text-align: left;
+}

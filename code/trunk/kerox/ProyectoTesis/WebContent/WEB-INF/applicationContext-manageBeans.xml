@@ -10,10 +10,16 @@
 		scope="session">
 		<property name="tutorLoginHandler" ref="tutorLoginHandler" />
 	</bean>
-    <bean id="hangOutBean" class="com.pirux.tesis.bean.HangOutBean"
-        scope="application" />
-    <bean id="articulosRelacionadosBean" class="com.pirux.tesis.bean.ArticulosRelacionadosBean"
-        scope="application">
+	<bean id="hangOutBean" class="com.pirux.tesis.bean.HangOutBean"
+		scope="application">
+	    <constructor-arg index="0" ref="tallerVirtualHandler" />
+	</bean>
+	<bean id="articulosRelacionadosBean" class="com.pirux.tesis.bean.ArticulosRelacionadosBean"
+		scope="application">
 		<constructor-arg index="0" ref="articuloRelacionadoHandler" />
-    </bean>
+	</bean>
+	<bean id="tallerVirtualBean" class="com.pirux.tesis.bean.TallerVirtualBean"
+		scope="session">
+		<constructor-arg index="0" ref="tallerVirtualHandler" />
+	</bean>
 </beans>
