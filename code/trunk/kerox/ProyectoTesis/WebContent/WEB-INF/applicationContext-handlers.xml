@@ -12,4 +12,7 @@
     <bean id="articuloRelacionadoHandler" class="com.pirux.tesis.handler.ArticuloRelacionadoHandler">
         <constructor-arg index="0" ref="articuloRelacionadoServiceMock" />
     </bean>
+    <bean id="tallerVirtualHandler" class="com.pirux.tesis.handler.TallerVirtualHandler">
+        <constructor-arg index="0" ref="tallerVirtualServiceMock" />
+    </bean>
 </beans>

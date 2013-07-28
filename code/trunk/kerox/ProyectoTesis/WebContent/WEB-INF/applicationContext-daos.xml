@@ -7,4 +7,5 @@
 							http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     <!-- Configuracion de los DAOS -->
     <bean id="tutorDAO" class="com.pirux.tesis.dao.impl.TutorDAOImpl" />
+    <bean id="tallerVirtualDAO" class="com.pirux.tesis.dao.impl.TallerVirtualDAOImpl" />
 </beans>

@@ -1,5 +1,7 @@
 package com.pirux.tesis.bean;
 
+import java.util.Date;
+
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
@@ -7,6 +9,9 @@ import javax.faces.context.FacesContext;
 import org.primefaces.component.media.Media;
 import org.primefaces.push.PushContext;
 import org.primefaces.push.PushContextFactory;
+
+import com.pirux.tesis.handler.TallerVirtualHandler;
+import com.pirux.tesis.model.TallerVirtual;
 
 /**
  * Bean para controlar el video del hangout
@@ -31,7 +36,11 @@ public class HangOutBean {
   private String ruta = "//resources//images//kerox_completo.png";
   private Media usuarioVideo;
 
-  public HangOutBean() {
+  //Handlers
+  private TallerVirtualHandler tallerVirtualHandler;
+
+  public HangOutBean(final TallerVirtualHandler tallerVirtualHandler) {
+    this.tallerVirtualHandler = tallerVirtualHandler;
     if (ruta != null) {
       usuarioVideo = new Media();
       usuarioVideo.setValue(ruta);
@@ -149,6 +158,23 @@ public class HangOutBean {
     }
     final PushContext pushContext = PushContextFactory.getDefault().getPushContext();
     pushContext.push("/videoCanal", datos);
+    // TODO dcabanillas, la accionde grabar deberia ser un hilo
+    grabarHangOut();
+  }
+
+  private void grabarHangOut() {
+    final TallerVirtual taller = new TallerVirtual();
+    taller.setDescripcion(descripcion);
+    taller.setFecha(new Date());
+    taller.setNivel(nivel);
+    taller.setNombreTutor(nombreTutor);
+    taller.setRutaLinkEmbebido("https://youtube.googleapis.com/v/R7hontvjr1E");
+    taller.setRutaLinkYouTube("http://www.youtube.com/watch?v=Q1SwrYMD2BI");
+    taller.setTecnologias(tecnologias);
+    taller.setTitulo(titulo);
+    // TODO dcabanillas: evitar el set, mandar el taller como parametro
+    tallerVirtualHandler.setTallerVirtual(taller);
+    tallerVirtualHandler.grabarTallerVirtual();
   }
 
   private String formarComponenteHtmlDelVideo() {
