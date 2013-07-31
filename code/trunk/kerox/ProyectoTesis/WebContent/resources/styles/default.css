@@ -107,7 +107,7 @@ body {
   background-color: #56A6DB;
   height: 44px;
   /*background-image: url("../images/fondo_header_azul.png");*/
-  border: solid 0;
+  -webkit-border-radius: 0 !important;
 }
 
 /* Estilos Panel Footer */
@@ -311,7 +311,7 @@ body {
 	display: inline-block;
 	text-decoration: none;
     text-align: left;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
 }
 

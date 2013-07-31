@@ -14,7 +14,8 @@ public class TutorDAOImpl extends GenericDAOImpl<Tutor, Integer>
 
   @Override
   public Tutor buscarUsuario(String usuario, String password) {
-    final Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Tutor.class);
+    // TODO dcabanillas: ver la forma de usar el getCurrentSession()
+    final Criteria criteria = sessionFactory.openSession().createCriteria(Tutor.class);
     criteria.add(Restrictions.eq("usuario", usuario));
     criteria.add(Restrictions.eq("password", password));
     return (Tutor) criteria.uniqueResult();

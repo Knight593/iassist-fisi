@@ -18,6 +18,7 @@ public class TallerVirtual {
   private String descripcion;
   private String nombreTutor;
   private Date fecha;
+  private java.sql.Date fechaSql;
 
   public Integer getId() {
     return id;
@@ -32,6 +33,7 @@ public class TallerVirtual {
   }
 
   public void setFecha(final Date fecha) {
+    setFechaSql(new java.sql.Date(fecha.getTime()));
     this.fecha = fecha;
   }
 
@@ -89,6 +91,14 @@ public class TallerVirtual {
 
   public void setDescripcion(final String descripcion) {
     this.descripcion = descripcion;
+  }
+
+  public java.sql.Date getFechaSql() {
+    return fechaSql;
+  }
+
+  public void setFechaSql(final java.sql.Date fechaSql) {
+    this.fechaSql = fechaSql;
   }
 
 }

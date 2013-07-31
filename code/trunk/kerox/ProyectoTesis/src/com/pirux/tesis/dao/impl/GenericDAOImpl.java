@@ -9,11 +9,11 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 import com.pirux.tesis.dao.GenericDAO;
 import com.pirux.tesis.persistence.exception.BussinessException;
 import com.pirux.tesis.persistence.exception.BussinessMessage;
-import com.pirux.tesis.persistence.hibernate.util.HibernateUtil;
 
 public class GenericDAOImpl<T, ID extends Serializable> implements
 		GenericDAO<T, ID> {
@@ -21,7 +21,10 @@ public class GenericDAOImpl<T, ID extends Serializable> implements
 	protected final Log log = LogFactory.getLog(getClass());
 
 	public GenericDAOImpl() {
-		sessionFactory = HibernateUtil.getSessionFactory();
+	  // TODO dcabanillas: Inyectar el sessionFactory por xml
+		sessionFactory = new Configuration().configure(
+            "/com/pirux/tesis/persistence/hibernate/util/hibernate.cfg.xml")
+            .buildSessionFactory();
 
 	}
 

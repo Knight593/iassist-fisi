@@ -17,7 +17,8 @@ public class TallerVirtualDAOImpl extends GenericDAOImpl<TallerVirtual, Integer>
   @SuppressWarnings("unchecked")
   @Override
   public List<TallerVirtual> buscarTalleresVirtuales() {
-    final Criteria criteria = sessionFactory.getCurrentSession().createCriteria(TallerVirtual.class);
+    // TODO dcabanillas: ver la forma de usar el getCurrentSession()
+    final Criteria criteria = sessionFactory.openSession().createCriteria(TallerVirtual.class);
     final List<TallerVirtual> listaTalleresVirtuales = (List<TallerVirtual>) criteria.list();
     return listaTalleresVirtuales;
   }
