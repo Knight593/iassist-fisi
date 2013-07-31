@@ -447,3 +447,11 @@ body {
   font-size: 15px;
   text-align: left;
 }
+
+/* Estilos de la vista de presentacion */
+.contenidoPresentacion {
+	text-align: justify;
+	color: black;
+	font-size: 13px;
+	width: 100%;
+}
