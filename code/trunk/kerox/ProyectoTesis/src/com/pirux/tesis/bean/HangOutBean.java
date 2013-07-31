@@ -33,7 +33,7 @@ public class HangOutBean {
   // Detalles del video
   private String rutaHangOut;
   // TODO dcabanillas, mover a un ConstantesRecursos
-  private String ruta = "//resources//images//kerox_completo.png";
+  private String ruta = "//resources//images//LogoCompleto.png";
   private Media usuarioVideo;
 
   //Handlers
