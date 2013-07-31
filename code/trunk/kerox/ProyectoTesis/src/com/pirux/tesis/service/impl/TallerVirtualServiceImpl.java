@@ -23,6 +23,10 @@ public class TallerVirtualServiceImpl implements TallerVirtualService {
   public TallerVirtualResponse consultarTalleresVirtuales(final TallerVirtualRequest request) {
     final TallerVirtualResponse response = new TallerVirtualResponse();
     final List<TallerVirtual> listaTalleresVirtuales = tallerVirtualDAO.buscarTalleresVirtuales();
+    // Seteamos el campo Date desde DateSql
+    for(final TallerVirtual taller : listaTalleresVirtuales) {
+      taller.setFecha(taller.getFechaSql());
+    }
     response.setListaTalleresVirtuales(listaTalleresVirtuales);
     return response;
   }
