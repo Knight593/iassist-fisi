@@ -20,4 +20,8 @@ public class NavegacionPageFlowBean {
   public String irHome() {
     return ConstantesFlowPage.GO_PAGINA_HOME;
   }
+
+  public String irPresentacion() {
+    return ConstantesFlowPage.GO_PAGINA_PRESENTACION;
+  }
 }
