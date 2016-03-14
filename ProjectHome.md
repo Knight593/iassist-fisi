@@ -1,0 +1,1 @@
+Proyecto elaborado para la asignatura Taller de Proyectos 2 de la Facultad de Ingeniería de Sistemas e Informática en la Universidad Nacional Mayor de San Marcos.
